@@ -38,6 +38,12 @@ const LandingPage = () => {
       ease: "power2.out",
       // ease: "bounce.out",
     });
+
+    timeline.from(".header", {
+      y: -100,
+      duration: 0.5,
+      ease: "power2.out",
+    });
   });
   return (
     <>
@@ -57,7 +63,26 @@ const LandingPage = () => {
       </div>
       <div className="pinkish-div absolute bottom-0 z-1 bg-[#D6BAD0] w-full" />
       <div className="greenish-div absolute w-0 top-0 right-0 z-2 bg-[#16a991] h-full" />
-      <div className="main-div absolute w-full h-full top-0 right-0 z-3"></div>
+      <div className="main-div absolute w-full h-full top-0 right-0 z-3 flex justify-between">
+        <header className="header flex w-full justify-between text-white p-11 align-middle">
+          <h1 className="text-2xl uppercase font-extrabold tracking-[3px]">
+            Paper + Land
+          </h1>
+          <div className="flex gap-12 text-[#272624da] bg-[#cdc5bfa0] align-middle justify-between px-12 py-6 text-2xl rounded-full">
+            <i className="fa-solid fa-cart-shopping" />
+            <div className="flex gap-3">
+              <i className="fa-solid fa-magnifying-glass" />
+              <i className="fa-solid fa-bars" />
+            </div>
+          </div>
+        </header>
+        <div
+          className="text-white text-[5rem]  mt-20 px-11 text-center 
+       w-[85%] m-auto text-wrap font-extrabold tracking-[3px]"
+        >
+          <h1>Positively uplifting landscapes</h1>
+        </div>
+      </div>
     </>
   );
 };
