@@ -1,33 +1,64 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+// import mainBgImage from "../assets/mainBgImage.jpg";
 const LandingPage = () => {
   // add text animation using gsap
 
   useGSAP(() => {
-    gsap.from("span", {
+    const timeline = gsap.timeline();
+
+    timeline.from("span", {
       opacity: 0,
       scale: 0.1,
-      y: 20,
+      y: 10,
+      duration: 0.2,
+      ease: "ease.in",
+      stagger: 0.1,
+    });
+
+    timeline.to(".pinkish-div", {
+      top: 0,
       duration: 0.5,
       ease: "power2.out",
-      stagger: 0.3,
+    });
+
+    timeline.to(".greenish-div", {
+      // right: 0,
+      width: "100%",
+      duration: 0.1,
+      ease: "power2.out",
+      scale: 1,
+      onComplete: () => {
+        document.querySelector(".main-div").style.display = "block";
+      },
+    });
+    timeline.to(".main-div", {
+      scale: 1,
+      duration: 0.5,
+      ease: "power2.out",
+      // ease: "bounce.out",
     });
   });
   return (
-    <div className="h-screen bg-black flex items-center justify-center">
-      <h1 className="text-7xl text-white uppercase font-bold flex gap-2">
-        <span className="block">P</span>
-        <span className="block">A</span>
-        <span className="block">P</span>
-        <span className="block">E</span>
-        <span className="block">R</span>
-        <span className="block">+</span>
-        <span className="block">L</span>
-        <span className="block">A</span>
-        <span className="block">N</span>
-        <span className="block">D</span>
-      </h1>
-    </div>
+    <>
+      <div className="h-screen bg-black flex items-center justify-center">
+        <h1 className="text-7xl text-white uppercase font-bold flex gap-2">
+          <span className="block">P</span>
+          <span className="block">A</span>
+          <span className="block">P</span>
+          <span className="block">E</span>
+          <span className="block">R</span>
+          <span className="block">+</span>
+          <span className="block">L</span>
+          <span className="block">A</span>
+          <span className="block">N</span>
+          <span className="block">D</span>
+        </h1>
+      </div>
+      <div className="pinkish-div absolute bottom-0 z-1 bg-[#D6BAD0] w-full" />
+      <div className="greenish-div absolute w-0 top-0 right-0 z-2 bg-[#16a991] h-full" />
+      <div className="main-div absolute w-full h-full top-0 right-0 z-3"></div>
+    </>
   );
 };
 

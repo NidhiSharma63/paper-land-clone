@@ -6,4 +6,18 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+
+/* main page bg image */
+.main-div{
+  background-image: url("./assets/mainBgImage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  scale:3.5;
+  display: none;
+  /* background-color: orange;
+  scale: 0.5; */
 }
