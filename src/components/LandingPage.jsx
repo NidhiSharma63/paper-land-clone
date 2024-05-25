@@ -1,13 +1,15 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-// import mainBgImage from "../assets/mainBgImage.jpg";
+import _ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(_ScrollTrigger);
+
 const LandingPage = () => {
   // add text animation using gsap
 
   useGSAP(() => {
     const timeline = gsap.timeline();
 
-    timeline.from("span", {
+    timeline.from(".logo span", {
       opacity: 0,
       scale: 0.1,
       y: 10,
@@ -44,11 +46,26 @@ const LandingPage = () => {
       duration: 0.5,
       ease: "power2.out",
     });
+
+    // add scroll trigger to animate the text
+
+    gsap.to(".main-text", {
+      scrollTrigger: {
+        trigger: ".main-text",
+        start: "top 10%",
+        end: "bottom bottom",
+        scrub: 3,
+        markers: true,
+      },
+      y: -200,
+      duration: 0.2,
+      ease: "slow(0.7,0.7,false)",
+    });
   });
   return (
     <>
       <div className="h-screen bg-black flex items-center justify-center">
-        <h1 className="text-7xl text-white uppercase font-bold flex gap-2">
+        <h1 className="logo text-7xl text-white uppercase font-bold flex gap-2">
           <span className="block">P</span>
           <span className="block">A</span>
           <span className="block">P</span>
@@ -78,9 +95,11 @@ const LandingPage = () => {
         </header>
         <div
           className="text-white text-[5rem]  mt-20 px-11 text-center 
-       w-[85%] m-auto text-wrap font-extrabold tracking-[3px]"
+       w-[85%] m-auto text-wrap font-extrabold tracking-[3px] flha"
         >
-          <h1>Positively uplifting landscapes</h1>
+          <h1 className="main-text relative top-[3rem]">
+            Positively uplifting landscapes
+          </h1>
         </div>
       </div>
     </>
@@ -88,3 +107,34 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
+{
+  /* covert the word of each text of "Positively uplifting landscapes" into individual span */
+}
+{
+  /* <span className="main-text">P</span>
+            <span>O</span>
+            <span>S</span>
+            <span>I</span>
+            <span>T</span>
+            <span>I</span>
+            <span>V</span>
+            <span>E</span>
+            <span>L</span>
+            <span>Y</span>
+            <span> </span>
+            <span>U</span>
+            <span>P</span>
+            <span>L</span>
+            <span>F</span>
+            <span>T</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+            <span> </span>
+            <span>L</span>
+            <span>A</span>
+            <span>N</span>
+            <span>D</span>
+            <span>S</span> */
+}
