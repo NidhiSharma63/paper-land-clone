@@ -52,7 +52,8 @@ const LandingPage = () => {
     gsap.to(".main-text", {
       scrollTrigger: {
         trigger: ".main-text",
-        start: "top 10%",
+        scroller: "body",
+        start: "top top",
         end: "bottom bottom",
         scrub: 3,
         markers: true,
