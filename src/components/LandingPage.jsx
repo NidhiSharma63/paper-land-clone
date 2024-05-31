@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import _ScrollTrigger from "gsap/ScrollTrigger";
+import _ScrollTrigger, { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(_ScrollTrigger);
 
 const LandingPage = () => {
@@ -49,18 +49,31 @@ const LandingPage = () => {
 
     // add scroll trigger to animate the text
 
-    gsap.to(".main-text", {
+    // gsap.to(".main-text", {
+    // 	scrollTrigger: {
+    // 		trigger: ".main-text",
+    // 		scroller: "body",
+    // 		start: "top top",
+    // 		end: "bottom bottom",
+    // 		scrub: 3,
+    // 		markers: true,
+    // 	},
+    // 	// y: -200,
+    // 	duration: 0.2,
+    // 	ease: "slow(0.7,0.7,false)",
+    // });
+    // apply parallax effect to any element with a data-speed attribute
+    gsap.to("[data-speed]", {
+      y: (i, el) =>
+        (1 - Number.parseFloat(el.getAttribute("data-speed"))) *
+        ScrollTrigger.maxScroll(window),
+      ease: "none",
       scrollTrigger: {
-        trigger: ".main-text",
-        scroller: "body",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 3,
-        markers: true,
+        start: 0,
+        end: "max",
+        invalidateOnRefresh: true,
+        scrub: 0,
       },
-      y: -200,
-      duration: 0.2,
-      ease: "slow(0.7,0.7,false)",
     });
   });
   return (
@@ -95,11 +108,100 @@ const LandingPage = () => {
           </div>
         </header>
         <div
-          className="text-white text-[5rem]  mt-20 px-11 text-center 
+          className="text-white text-[5rem] mt-20 px-11 text-center 
        w-[85%] m-auto text-wrap font-extrabold tracking-[3px] flha"
         >
-          <h1 className="main-text relative top-[3rem]">
-            Positively uplifting landscapes
+          <h1 className="main-text relative top-[2rem] capitalize flex w-full flex-wrap border-2 m-auto text-center justify-center">
+            {/* Positively uplifting landscapes */}
+            <div className="flex">
+              <span data-speed="1.3" className="block">
+                P
+              </span>
+              <span data-speed="1.3" className="block">
+                O
+              </span>
+              <span data-speed="1.4" className="block">
+                S
+              </span>
+              <span data-speed="1.4" className="block">
+                I
+              </span>
+              <span data-speed="1.49" className="block">
+                T
+              </span>
+              <span data-speed="1.49" className="block">
+                I
+              </span>
+              <span data-speed="1.49" className="block">
+                V
+              </span>
+              <span data-speed="1.49" className="block">
+                E
+              </span>
+              <span data-speed="1.49" className="block">
+                L
+              </span>
+              <span data-speed="1.49" className="block">
+                Y
+              </span>
+            </div>
+            &nbsp;
+            <div className="flex">
+              <span data-speed="1.49" className="block">
+                U
+              </span>
+              <span data-speed="1.49" className="block">
+                P
+              </span>
+              <span data-speed="1.49" className="block">
+                L
+              </span>
+              <span data-speed="1.49" className="block">
+                F
+              </span>
+              <span data-speed="1.49" className="block">
+                T
+              </span>
+              <span data-speed="1.4" className="block">
+                I
+              </span>
+              <span data-speed="1.4" className="block">
+                N
+              </span>
+              <span data-speed="1.3" className="block">
+                G
+              </span>
+            </div>
+            &nbsp;
+            <div className="flex">
+              <span data-speed="1.23" className="block">
+                L
+              </span>
+              <span data-speed="1.23" className="block">
+                A
+              </span>
+              <span data-speed="1.23" className="block">
+                N
+              </span>
+              <span data-speed="1.29" className="block">
+                D
+              </span>
+              <span data-speed="1.29" className="block">
+                S
+              </span>
+              <span data-speed="1.29" className="block">
+                C
+              </span>
+              <span data-speed="1.23" className="block">
+                A
+              </span>
+              <span data-speed="1.23" className="block">
+                P
+              </span>
+              <span data-speed="1.23" className="block">
+                E
+              </span>
+            </div>
           </h1>
         </div>
       </div>
