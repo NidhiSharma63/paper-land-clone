@@ -25,7 +25,6 @@ const LandingPage = () => {
     });
 
     timeline.to(".greenish-div", {
-      // right: 0,
       width: "100%",
       duration: 0.1,
       ease: "power2.out",
@@ -38,7 +37,6 @@ const LandingPage = () => {
       scale: 1,
       duration: 0.5,
       ease: "power2.out",
-      // ease: "bounce.out",
     });
 
     timeline.from(".header", {
@@ -56,7 +54,7 @@ const LandingPage = () => {
         start: 0,
         end: "max",
         invalidateOnRefresh: true,
-        scrub: 0,
+        scrub: 2,
       },
     });
   });
@@ -95,7 +93,7 @@ const LandingPage = () => {
           className="text-white text-[5rem] mt-20 px-11 text-center 
        w-[85%] m-auto text-wrap font-extrabold tracking-[3px] flha"
         >
-          <h1 className="main-text relative top-[2rem] capitalize flex w-full flex-wrap border-2 m-auto text-center justify-center">
+          <h1 className="main-text relative top-[2rem] capitalize flex w-full flex-wrap m-auto text-center justify-center">
             {/* Positively uplifting landscapes */}
             <div className="flex">
               <span data-speed="1.3" className="block">
