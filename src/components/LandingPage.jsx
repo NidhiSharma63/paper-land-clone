@@ -46,22 +46,6 @@ const LandingPage = () => {
       duration: 0.5,
       ease: "power2.out",
     });
-
-    // add scroll trigger to animate the text
-
-    // gsap.to(".main-text", {
-    // 	scrollTrigger: {
-    // 		trigger: ".main-text",
-    // 		scroller: "body",
-    // 		start: "top top",
-    // 		end: "bottom bottom",
-    // 		scrub: 3,
-    // 		markers: true,
-    // 	},
-    // 	// y: -200,
-    // 	duration: 0.2,
-    // 	ease: "slow(0.7,0.7,false)",
-    // });
     // apply parallax effect to any element with a data-speed attribute
     gsap.to("[data-speed]", {
       y: (i, el) =>
@@ -77,7 +61,7 @@ const LandingPage = () => {
     });
   });
   return (
-    <>
+    <div data-scroll data-scroll-speed="-3">
       <div className="h-screen bg-black flex items-center justify-center">
         <h1 className="logo text-7xl text-white uppercase font-bold flex gap-2">
           <span className="block">P</span>
@@ -205,7 +189,7 @@ const LandingPage = () => {
           </h1>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
