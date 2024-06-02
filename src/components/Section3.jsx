@@ -1,3 +1,5 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { useCallback, useState } from "react";
 // import Image1 from "../assets/Art.webp";
 
@@ -6,6 +8,20 @@ const Section3 = () => {
   const [categorySelected, setCategorySelected] = useState("Art Prints");
   const [imageUrl, setimageUrl] = useState("src/assets/Art.webp");
   const [removeImage, setRemoveImage] = useState(false);
+
+  useGSAP(() => {
+    gsap.from(".image-container", {
+      x: "-100%",
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".section-3",
+        start: "top 80%",
+        end: "bottom bottom",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+  });
 
   const handleMouseEnter = useCallback(() => {
     setIsHovered(true);
@@ -36,7 +52,12 @@ const Section3 = () => {
         </button>
       </div>
       <div className="section3-bottom flex gap-10">
-        <div className="image-container w-[750px] h-[600px] rounded-xl overflow-hidden">
+        <div
+          // data-scroll
+          // data-scroll-speed="-1"
+          // data-scroll-direction="horizontal"
+          className="image-container w-[750px] h-[600px] rounded-xl overflow-hidden"
+        >
           <img
             src={imageUrl}
             alt="showcase-image"
