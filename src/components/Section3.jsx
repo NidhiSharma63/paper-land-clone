@@ -24,7 +24,7 @@ const Section3 = () => {
         `src/assets/${event.target.dataset.category.split(" ")[0]}.webp`
       );
       setRemoveImage(false);
-    }, 500);
+    }, 400);
   }, []);
 
   return (

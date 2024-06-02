@@ -46,6 +46,6 @@ body {
 
 .removeImage{
   scale: 1.6;
-  opacity: 0;
+  opacity: 0.2;
   visibility: hidden;
 }
