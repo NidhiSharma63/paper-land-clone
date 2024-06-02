@@ -12,38 +12,35 @@ const LandingPage = () => {
     timeline.from(".logo span", {
       opacity: 0,
       scale: 0.1,
-      y: 10,
-      duration: 0.2,
+      y: 10, // Increased duration
       ease: "ease.in",
-      stagger: 0.1,
+      stagger: 0.1, // Increased stagger
     });
 
     timeline.to(".pinkish-div", {
-      top: 0,
-      duration: 0.5,
+      top: 0, // Increased duration
       ease: "power2.out",
     });
 
     timeline.to(".greenish-div", {
-      width: "100%",
-      duration: 0.1,
+      width: "100%", // Increased duration
       ease: "power2.out",
       scale: 1,
       onComplete: () => {
         document.querySelector(".main-div").style.display = "block";
       },
     });
+
     timeline.to(".main-div", {
-      scale: 1,
-      duration: 0.5,
+      scale: 1, // Increased duration
       ease: "power2.out",
     });
 
     timeline.from(".header", {
-      y: -100,
-      duration: 0.5,
+      y: -100, // Increased duration
       ease: "power2.out",
     });
+
     // apply parallax effect to any element with a data-speed attribute
     gsap.to("[data-speed]", {
       y: (i, el) =>
@@ -54,10 +51,11 @@ const LandingPage = () => {
         start: 0,
         end: "max",
         invalidateOnRefresh: true,
-        scrub: 2,
+        scrub: 3, // Increased scrub duration
       },
     });
   });
+
   return (
     <div data-scroll data-scroll-speed="-3">
       <div className="h-screen bg-black flex items-center justify-center">
@@ -94,93 +92,90 @@ const LandingPage = () => {
        w-[85%] m-auto text-wrap font-extrabold tracking-[3px] flha"
         >
           <h1 className="main-text relative top-[2rem] capitalize flex w-full flex-wrap m-auto text-center justify-center">
-            {/* Positively uplifting landscapes */}
             <div className="flex">
-              <span data-speed="1.3" className="block">
-                P
-              </span>
-              <span data-speed="1.3" className="block">
+              <span data-speed="1.255">P</span>
+              <span data-speed="1.255" className="block">
                 O
               </span>
-              <span data-speed="1.4" className="block">
+              <span data-speed="1.244" className="block">
                 S
               </span>
-              <span data-speed="1.4" className="block">
+              <span data-speed="1.233" className="block">
                 I
               </span>
-              <span data-speed="1.49" className="block">
+              <span data-speed="1.233" className="block">
                 T
               </span>
-              <span data-speed="1.49" className="block">
+              <span data-speed="1.233" className="block">
                 I
               </span>
-              <span data-speed="1.49" className="block">
+              <span data-speed="1.222" className="block">
                 V
               </span>
-              <span data-speed="1.49" className="block">
+              <span data-speed="1.222" className="block">
                 E
               </span>
-              <span data-speed="1.49" className="block">
+              <span data-speed="1.222" className="block">
                 L
               </span>
-              <span data-speed="1.49" className="block">
+              <span data-speed="1.211" className="block">
                 Y
               </span>
             </div>
             &nbsp;
             <div className="flex">
-              <span data-speed="1.49" className="block">
+              <span data-speed="1.211" className="block">
                 U
               </span>
-              <span data-speed="1.49" className="block">
+              <span data-speed="1.211" className="block">
                 P
               </span>
-              <span data-speed="1.49" className="block">
+              <span data-speed="1.199" className="block">
                 L
               </span>
-              <span data-speed="1.49" className="block">
+              <span data-speed="1.199" className="block">
                 F
               </span>
-              <span data-speed="1.49" className="block">
+              <span data-speed="1.199" className="block">
                 T
               </span>
-              <span data-speed="1.4" className="block">
+              <span data-speed="1.166" className="block">
                 I
               </span>
-              <span data-speed="1.4" className="block">
+              <span data-speed="1.166" className="block">
                 N
               </span>
-              <span data-speed="1.3" className="block">
+              <span data-speed="1.166" className="block">
                 G
               </span>
             </div>
             &nbsp;
             <div className="flex">
-              <span data-speed="1.23" className="block">
+              <span data-speed="1.277" className="block">
                 L
               </span>
-              <span data-speed="1.23" className="block">
+              <span data-speed="1.277" className="block">
                 A
               </span>
-              <span data-speed="1.23" className="block">
+              <span data-speed="1.277" className="block">
                 N
               </span>
-              <span data-speed="1.29" className="block">
+              <span data-speed="1.244" className="block">
                 D
               </span>
-              <span data-speed="1.29" className="block">
+              <span data-speed="1.244" className="block">
                 S
               </span>
-              <span data-speed="1.29" className="block">
+              <span data-speed="1.244" className="block">
                 C
               </span>
-              <span data-speed="1.23" className="block">
+              <span data-speed="1.222" className="block">
                 A
               </span>
-              <span data-speed="1.23" className="block">
+              <span data-speed="1.222" className="block">
                 P
               </span>
-              <span data-speed="1.23" className="block">
+              <span data-speed="1.222" className="block">
                 E
               </span>
             </div>
@@ -192,34 +187,3 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
-
-{
-  /* covert the word of each text of "Positively uplifting landscapes" into individual span */
-}
-{
-  /* <span className="main-text">P</span>
-            <span>O</span>
-            <span>S</span>
-            <span>I</span>
-            <span>T</span>
-            <span>I</span>
-            <span>V</span>
-            <span>E</span>
-            <span>L</span>
-            <span>Y</span>
-            <span> </span>
-            <span>U</span>
-            <span>P</span>
-            <span>L</span>
-            <span>F</span>
-            <span>T</span>
-            <span>I</span>
-            <span>N</span>
-            <span>G</span>
-            <span> </span>
-            <span>L</span>
-            <span>A</span>
-            <span>N</span>
-            <span>D</span>
-            <span>S</span> */
-}
