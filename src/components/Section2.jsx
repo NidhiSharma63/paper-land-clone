@@ -13,7 +13,7 @@ const Section2 = () => {
         start: "top 80%",
         end: "bottom bottom",
         scrub: 2, // Increased scrub duration,
-        markers: true,
+        // markers: true,
         trigger: ".section-2",
       },
     });
@@ -27,7 +27,7 @@ const Section2 = () => {
       {/* <div className="w-[80%] h-[80%] m-auto border-2 flex gap-24"> */}
       <div className="">
         <p
-          className="text-4xl font-bold italic section-2-text"
+          className="text-4xl font-bold section-2-text"
           data-scroll
           data-scroll-speed="-2"
           direction="vertical"
@@ -92,7 +92,3 @@ const Section2 = () => {
 };
 
 export default Section2;
-// aper + Land is an art and design studio based in Leeds, creating
-//           contemporary landscape art prints, cards and homewares. We combine
-//           Indian ink with digital methods to create joyful, vibrant artwork that
-//           feeds your soul.
