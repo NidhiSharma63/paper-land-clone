@@ -29,13 +29,17 @@ body {
 }
 
 .main-container{
-  /* overflow-x: hidden;
-  height: 100vh; */
    background-color: black;
 }
 
 .heading{
   color:rgba(0, 0, 0, 0.692)
-  /* color:rgba(0, 0, 0, 0.781) */
-  
+}
+
+.active-category{
+  color: #292729bd;
+  border-color: #292729bd;
+}
+.transition{
+  transition: all 0.3s ease-in;
 }

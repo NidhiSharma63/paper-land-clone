@@ -3,6 +3,7 @@ import Image1 from "../assets/image1.webp";
 
 const Section3 = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [categorySelected, setCategorySelected] = useState("Art Prints");
 
   const handleMouseEnter = useCallback(() => {
     setIsHovered(true);
@@ -11,6 +12,11 @@ const Section3 = () => {
   const handleMouseLeave = useCallback(() => {
     setIsHovered(false);
   }, []);
+
+  const handleCategorySelection = useCallback((event) => {
+    setCategorySelected(event.target.dataset.category);
+  }, []);
+
   return (
     <div className="section-3 h-[700px] flex border-2 bg-[#fccff6] text-[#373637] align-middle justify-between p-[4rem] pt-[4rem] flex-col gap-10 mb-[4rem]">
       <div className="flex align-middle justify-start gap-12 border-2">
@@ -26,18 +32,67 @@ const Section3 = () => {
             alt="showcase-image"
             className={`w-full h-full ${
               isHovered ? "scale-110" : "scale-100"
-            } transition-all duration-300`}
+            } transition-all duration-500 cursor-pointer`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           />
         </div>
-        <div className="section-3-text flex flex-col gap-2 mt-3 text-2xl">
-          <p className="text-[#4e4d4e3a] cursor-pointer">Art Prints</p>
-          <hr className="border-[1px] border-[#4e4d4e3a]" />
-          <p className="text-[#4e4d4e3a] cursor-pointer">Cards & Stationery</p>
-          <hr className="border-[1px] border-[#4e4d4e3a]" />
-          <p className="text-[#4e4d4e3a] cursor-pointer">Homewares</p>
-          <hr className="border-[1px] border-[#4e4d4e3a]" />
+        <div className="section-3-text flex flex-col gap-4 mt-3 text-2xl">
+          <p
+            className={` cursor-pointer hover:translate-x-5 transition ${
+              categorySelected.includes("Art Prints")
+                ? "active-category"
+                : "text-[#4e4d4e3a]"
+            }`}
+            onClick={handleCategorySelection}
+            data-category="Art Prints"
+          >
+            Art Prints
+          </p>
+          <hr
+            // className="border-[1px] border-[#4e4d4e3a]"
+            className={` border-[1px] ${
+              categorySelected.includes("Art Prints")
+                ? "active-category"
+                : "border-[#4e4d4e3a]"
+            }`}
+          />
+          <p
+            className={` cursor-pointer hover:translate-x-5 transition ${
+              categorySelected.includes("Cards & Stationery")
+                ? "active-category"
+                : "text-[#4e4d4e3a]"
+            }`}
+            data-category="Cards & Stationery"
+            onClick={handleCategorySelection}
+          >
+            Cards & Stationery
+          </p>
+          <hr
+            className={` border-[1px] ${
+              categorySelected.includes("Cards & Stationery")
+                ? "active-category"
+                : "border-[#4e4d4e3a]"
+            }`}
+          />
+          <p
+            className={` cursor-pointer hover:translate-x-5 transition ${
+              categorySelected.includes("Homewares")
+                ? "active-category"
+                : "text-[#4e4d4e3a]"
+            }`}
+            data-category="Homewares"
+            onClick={handleCategorySelection}
+          >
+            Homewares
+          </p>
+          <hr
+            className={`border-[1px] ${
+              categorySelected.includes("Homewares")
+                ? "active-category"
+                : "border-[#4e4d4e3a]"
+            }`}
+          />
         </div>
       </div>
     </div>
