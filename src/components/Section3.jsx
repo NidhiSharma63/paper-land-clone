@@ -1,9 +1,10 @@
-import React, { useCallback, useState } from "react";
-import Image1 from "../assets/image1.webp";
+import { useCallback, useState } from "react";
+// import Image1 from "../assets/Art.webp";
 
 const Section3 = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [categorySelected, setCategorySelected] = useState("Art Prints");
+  const [imageUrl, setimageUrl] = useState("src/assets/Art.webp");
 
   const handleMouseEnter = useCallback(() => {
     setIsHovered(true);
@@ -15,10 +16,14 @@ const Section3 = () => {
 
   const handleCategorySelection = useCallback((event) => {
     setCategorySelected(event.target.dataset.category);
+    // change image url
+    setimageUrl(
+      `src/assets/${event.target.dataset.category.split(" ")[0]}.webp`
+    );
   }, []);
 
   return (
-    <div className="section-3 h-[700px] flex border-2 bg-[#fccff6] text-[#373637] align-middle justify-between p-[4rem] pt-[4rem] flex-col gap-10 mb-[4rem]">
+    <div className="section-3 h-[800px] flex border-2 bg-[#fccff6] text-[#373637] align-middle justify-between p-[4rem] pt-[4rem] flex-col">
       <div className="flex align-middle justify-start gap-12 border-2">
         <h3 className="text-2xl font-bold heading">Product Collections</h3>
         <button className="border-2 px-4 py-1 rounded text-[11px] font-medium tracking-wide border-[#181816cc]">
@@ -26,13 +31,13 @@ const Section3 = () => {
         </button>
       </div>
       <div className="section3-bottom flex gap-10">
-        <div className="image-container w-[750px] h-[500px] rounded-xl overflow-hidden">
+        <div className="image-container w-[750px] h-[600px] rounded-xl overflow-hidden">
           <img
-            src={Image1}
+            src={imageUrl}
             alt="showcase-image"
             className={`w-full h-full ${
               isHovered ? "scale-110" : "scale-100"
-            } transition-all duration-500 cursor-pointer`}
+            } transition-all duration-500 cursor-pointer object-cover`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           />
