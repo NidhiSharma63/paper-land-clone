@@ -28,8 +28,8 @@ const Section3 = () => {
   }, []);
 
   return (
-    <div className="section-3 h-[800px] flex border-2 bg-[#fccff6] text-[#373637] align-middle justify-between p-[4rem] pt-[4rem] flex-col">
-      <div className="flex align-middle justify-start gap-12 border-2">
+    <div className="section-3 h-[800px] flex  bg-[#fccff6] text-[#373637] align-middle justify-between p-[4rem] pt-[4rem] flex-col">
+      <div className="flex align-middle justify-start gap-12">
         <h3 className="text-2xl font-bold heading">Product Collections</h3>
         <button className="border-2 px-4 py-1 rounded text-[11px] font-medium tracking-wide border-[#181816cc]">
           VIEW ALL PRODUCTS
