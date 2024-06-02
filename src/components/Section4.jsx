@@ -149,13 +149,13 @@ const Section4 = () => {
                     );
                   })}
                 </div>
-                <br />
+                {/* <br /> */}
                 <div className="flex">
                   {item.heading2.split("").map((letter, index) => {
                     return (
                       <span
                         key={index}
-                        className="block font-bold scale-0 translate-y-[-10px] opacity-0"
+                        className="block scale-0 translate-y-[-10px] opacity-0"
                       >
                         {letter}
                       </span>
