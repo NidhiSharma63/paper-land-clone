@@ -5,6 +5,7 @@ const Section3 = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [categorySelected, setCategorySelected] = useState("Art Prints");
   const [imageUrl, setimageUrl] = useState("src/assets/Art.webp");
+  const [removeImage, setRemoveImage] = useState(false);
 
   const handleMouseEnter = useCallback(() => {
     setIsHovered(true);
@@ -16,10 +17,14 @@ const Section3 = () => {
 
   const handleCategorySelection = useCallback((event) => {
     setCategorySelected(event.target.dataset.category);
+    setRemoveImage(true);
     // change image url
-    setimageUrl(
-      `src/assets/${event.target.dataset.category.split(" ")[0]}.webp`
-    );
+    setTimeout(() => {
+      setimageUrl(
+        `src/assets/${event.target.dataset.category.split(" ")[0]}.webp`
+      );
+      setRemoveImage(false);
+    }, 500);
   }, []);
 
   return (
@@ -37,7 +42,8 @@ const Section3 = () => {
             alt="showcase-image"
             className={`w-full h-full ${
               isHovered ? "scale-110" : "scale-100"
-            } transition-all duration-500 cursor-pointer object-cover`}
+            } transition-all duration-500 cursor-pointer object-cover 
+            ${removeImage ? "removeImage" : ""}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           />

@@ -43,3 +43,9 @@ body {
 .transition{
   transition: all 0.3s ease-in;
 }
+
+.removeImage{
+  scale: 1.6;
+  opacity: 0;
+  visibility: hidden;
+}
