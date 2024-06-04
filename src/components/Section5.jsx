@@ -1,6 +1,5 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React from "react";
 
 const data = [
   {
@@ -34,7 +33,7 @@ const Section5 = () => {
         end: "bottom bottom",
         invalidateOnRefresh: true,
         scrub: 1,
-        markers: true,
+        // markers: true,
         trigger: ".section-5",
       },
     });
