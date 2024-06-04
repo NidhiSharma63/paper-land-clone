@@ -49,3 +49,23 @@ body {
   opacity: 0.2;
   visibility: hidden;
 }
+
+.cursor {
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  position: fixed;
+  z-index: 9999;
+}
+
+.cursor-example {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: rgba(161, 157, 157, 0.589);
+  z-index: 9999;
+
+}

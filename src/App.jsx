@@ -1,3 +1,4 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LocomotiveScroll from "locomotive-scroll";
@@ -11,8 +12,30 @@ import Section6 from "./components/Section6";
 
 gsap.registerPlugin(ScrollTrigger);
 
+let posX = 0;
+let posY = 0;
+
+let mouseX = 0;
+let mouseY = 0;
 const App = () => {
   const scrollRef = useRef();
+  useGSAP(() => {
+    gsap.to(".cursor-example", {
+      duration: 0.018,
+      repeat: -1,
+      onRepeat: () => {
+        posX += (mouseX - posX) / 8;
+        posY += (mouseY - posY) / 8;
+
+        gsap.set(".cursor-example", {
+          css: {
+            left: posX - 1,
+            top: posY - 2,
+          },
+        });
+      },
+    });
+  });
 
   useEffect(() => {
     // --- SETUP START ---
@@ -54,13 +77,25 @@ const App = () => {
     //   ScrollTrigger.removeEventListener("refresh", () => locoScroll.update());
     //   locoScroll.destroy();
     // };
+
+    document.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
     return () => {
       console.log("first");
+      document.removeEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
     };
   }, []);
 
   return (
     <div ref={scrollRef} className="smooth-scroll ">
+      <div className="cursor"></div>
+
+      <div className="cursor-example"></div>
       <LandingPage />
       <Section2 />
       <Section3 />
@@ -72,4 +107,3 @@ const App = () => {
 };
 
 export default App;
-
