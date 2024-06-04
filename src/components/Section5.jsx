@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useState } from "react";
+import React from "react";
 
 const data = [
   {
@@ -30,7 +30,7 @@ const Section5 = () => {
     gsap.from(".section-5-card-image", {
       scale: 1.5,
       scrollTrigger: {
-        start: "top 40%",
+        start: "top 20%",
         end: "bottom bottom",
         invalidateOnRefresh: true,
         scrub: 1,
@@ -57,7 +57,7 @@ const Section5 = () => {
             >
               <div className="w-[270px] rounded-xl overflow-hidden">
                 <img
-                  className="w-full h-full transition-transform duration-300 ease-out group-hover:scale-110"
+                  className="w-full h-full transition-transform duration-300 ease-out group-hover:scale-110 section-5-card-image"
                   src={elem.image}
                   alt={elem.heading1}
                 />
