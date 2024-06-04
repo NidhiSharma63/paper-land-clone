@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import _ScrollTrigger, { ScrollTrigger } from "gsap/ScrollTrigger";
+import _ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(_ScrollTrigger);
 
 const LandingPage = () => {
@@ -44,20 +44,16 @@ const LandingPage = () => {
     // apply parallax effect to any element with a data-speed attribute
     gsap.to("[data-speed]", {
       y: (i, el) =>
-        (1 - Number.parseFloat(el.getAttribute("data-speed"))) * 302,
-      // ease: "ease.in",
+        (1 - Number.parseFloat(el.getAttribute("data-speed"))) * 402,
+      ease: "none",
       scrollTrigger: {
         start: 0,
         end: "max",
         invalidateOnRefresh: true,
         scrub: 2, // Increased scrub duration
         markers: true,
+        trigger: ".smooth-scroll",
       },
-      onScroll: () => {
-        // locoScroll.update();
-        console.log("first", ScrollTrigger.maxScroll(window));
-      },
-      // paused: true,
     });
   });
 
@@ -137,6 +133,9 @@ const LandingPage = () => {
               </span>
               <span data-speed="1.199" className="block">
                 L
+              </span>
+              <span data-speed="1.199" className="block">
+                I
               </span>
               <span data-speed="1.199" className="block">
                 F
