@@ -44,8 +44,8 @@ const LandingPage = () => {
     // apply parallax effect to any element with a data-speed attribute
     gsap.to("[data-speed]", {
       y: (i, el) =>
-        (1 - Number.parseFloat(el.getAttribute("data-speed"))) * 402,
-      ease: "none",
+        (1 - Number.parseFloat(el.getAttribute("data-speed"))) * 302,
+      // ease: "ease.in",
       scrollTrigger: {
         start: 0,
         end: "max",
