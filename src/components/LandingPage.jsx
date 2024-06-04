@@ -44,15 +44,20 @@ const LandingPage = () => {
     // apply parallax effect to any element with a data-speed attribute
     gsap.to("[data-speed]", {
       y: (i, el) =>
-        (1 - Number.parseFloat(el.getAttribute("data-speed"))) *
-        ScrollTrigger.maxScroll(window),
+        (1 - Number.parseFloat(el.getAttribute("data-speed"))) * 402,
       ease: "none",
       scrollTrigger: {
         start: 0,
         end: "max",
         invalidateOnRefresh: true,
-        scrub: 3, // Increased scrub duration
+        scrub: 2, // Increased scrub duration
+        markers: true,
       },
+      onScroll: () => {
+        // locoScroll.update();
+        console.log("first", ScrollTrigger.maxScroll(window));
+      },
+      // paused: true,
     });
   });
 
