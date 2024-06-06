@@ -1,6 +1,6 @@
 const Section6 = () => {
   return (
-    <div className="section-6 bg-[#F4EB9E] md:p-[4rem] pt-[4rem]  md:pl-[7rem] pl-[2rem] p-[2rem] flex flex-col  justify-between h-auto gap-14">
+    <div className="section-6 bg-[#F4EB9E] md:p-[4rem] pt-[4rem]  md:pl-[4rem] pl-[2rem] p-[2rem] flex flex-col  justify-between h-auto gap-14">
       <div className="flex justify-between md:flex-row flex-col gap-10 align-middle text-[#373637]">
         <div className="flex flex-1 sm:flex-row  flex-col justify-between text-lg">
           <div className="md:mb-1 mb-4 mr-4">
