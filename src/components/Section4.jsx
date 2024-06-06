@@ -120,14 +120,14 @@ const Section4 = () => {
     });
   });
   return (
-    <div className="section-4 h-auto flex  bg-[#fccff6] text-[#373637] align-middle justify-between p-[4rem] pt-[4rem]  pl-[7rem] flex-col gap-24">
+    <div className="section-4 h-auto flex  bg-[#fccff6] text-[#373637] align-middle justify-between md:p-[4rem]  md:pl-[4rem] p-[2rem] pl-[2rem] flex-col gap-16">
       <div className="flex align-middle justify-start gap-12">
         <h3 className="text-2xl font-bold heading">Bestsellers</h3>
         <button className="border-2 px-4 py-1 rounded text-[11px] font-medium tracking-wide border-[#181816cc]">
           VIEW ALL PRODUCTS
         </button>
       </div>
-      <div className="flex flex-col gap-36 relative">
+      <div className="flex flex-col md:gap-36 gap-12 relative">
         {data.map((item) => {
           return (
             <div
@@ -135,7 +135,7 @@ const Section4 = () => {
               key={item.image}
             >
               <h1
-                className={`section-4-text-${item.className} text-7xl text-white uppercase absolute z-20 top-[200px] left-[100px] w-[540px] text-wrap`}
+                className={`section-4-text-${item.className} md:text-7xl text-3xl text-white uppercase absolute z-20 md:top-[200px] top-[100px] md:left-[100px] left-[50px] md:w-[540px] w-[300px] text-wrap`}
               >
                 <div className="flex">
                   {item.heading1.split("").map((letter, index) => {
@@ -163,18 +163,20 @@ const Section4 = () => {
                   })}
                 </div>
               </h1>
-              <div className="card flex gap-6 flex-col absolute w-[220px] px-8 py-4 rounded-xl bg-[#f4f6f3c7] right-[157px] bottom-[130px] z-10">
+              <div className="card flex md:gap-6 gap-3 flex-col absolute md:w-[220px] w-[110px] md:px-8  md:py-4 px-4 py-2 rounded-xl bg-[#f4f6f3c7] md:right-[157px] md:bottom-[130px] right-[30px] bottom-[27px] z-10">
                 <div className="flex gap-1 flex-col">
-                  <p className="text-[18px]">ART PRINT</p>
-                  <p className="font-bold text-[20px]">£24.00 – £42.00</p>
+                  <p className="md:text-[18px] text-[12px]">ART PRINT</p>
+                  <p className="font-bold md:text-[20px] text-[14px]">
+                    £24.00 – £42.00
+                  </p>
                 </div>
-                <button className="font-bold text-white bg-black rounded-md text-[18px] py-3 w-[130px]">
+                <button className="font-bold text-white bg-black rounded-md md:text-[18px] text-[12px] md:py-3 py-1 md:w-[130px] w-[80px]">
                   Shop Now
                 </button>
               </div>
-              <div className="imageContainer max-w-[1050px] max-h-[650px] rounded-xl overflow-hidden">
+              <div className="imageContainer max-w-[1050px] max-h-[600px] rounded-xl overflow-hidden ">
                 <img
-                  className="image w-full h-full object-cover translate-y-[-90px]"
+                  className="image w-full h-full object-cover md:translate-y-[-90px] translate-y-0"
                   src={item.image}
                   alt="art"
                 />
