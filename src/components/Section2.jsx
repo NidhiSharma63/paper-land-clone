@@ -27,7 +27,7 @@ const Section2 = () => {
       {/* <div className="w-[80%] h-[80%] m-auto border-2 flex gap-24"> */}
       <div className="">
         <p
-          className="md:text-4xl text-3xl font-bold section-2-text w-[300px] border-2"
+          className="md:text-4xl text-3xl font-bold section-2-text w-[300px]"
           data-scroll
           data-scroll-speed="-2"
           direction="vertical"
