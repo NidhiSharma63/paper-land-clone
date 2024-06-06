@@ -44,19 +44,19 @@ const Section3 = () => {
   }, []);
 
   return (
-    <div className="section-3 h-[800px] flex  bg-[#fccff6] text-[#373637] align-middle justify-between p-[4rem] pt-[4rem] pl-[7rem] flex-col">
+    <div className="section-3 h-auto gap-8 flex  bg-[#fccff6] text-[#373637] align-middle justify-between md:p-[4rem] p-[2rem] pt-[4rem] md:pl-[7rem] pl-[2rem] flex-col ">
       <div className="flex align-middle justify-start gap-12">
         <h3 className="text-2xl font-bold heading">Product Collections</h3>
         <button className="border-2 px-4 py-1 rounded text-[11px] font-medium tracking-wide border-[#181816cc]">
           VIEW ALL PRODUCTS
         </button>
       </div>
-      <div className="section3-bottom flex gap-10">
+      <div className="section3-bottom flex gap-10 md:flex-row flex-col-reverse">
         <div
           // data-scroll
           // data-scroll-speed="-1"
           // data-scroll-direction="horizontal"
-          className="image-container w-[750px] h-[600px] rounded-xl overflow-hidden"
+          className="image-container max-w-[750px] max-h-[600px] rounded-xl overflow-hidden"
         >
           <img
             src={imageUrl}
@@ -69,7 +69,7 @@ const Section3 = () => {
             onMouseLeave={handleMouseLeave}
           />
         </div>
-        <div className="section-3-text flex flex-col gap-4 mt-3 text-2xl">
+        <div className="section-3-text flex md:flex-col  flex-wrap flex-row gap-4 mt-3 md:text-2xl text-lg">
           <p
             className={` cursor-pointer hover:translate-x-5 transition ${
               categorySelected.includes("Art Prints")
@@ -80,15 +80,16 @@ const Section3 = () => {
             data-category="Art Prints"
           >
             Art Prints
+            <hr
+              // className="border-[1px] border-[#4e4d4e3a]"
+              className={` border-[1px] ${
+                categorySelected.includes("Art Prints")
+                  ? "active-category"
+                  : "border-[#4e4d4e3a]"
+              }`}
+            />
           </p>
-          <hr
-            // className="border-[1px] border-[#4e4d4e3a]"
-            className={` border-[1px] ${
-              categorySelected.includes("Art Prints")
-                ? "active-category"
-                : "border-[#4e4d4e3a]"
-            }`}
-          />
+
           <p
             className={` cursor-pointer hover:translate-x-5 transition ${
               categorySelected.includes("Cards & Stationery")
@@ -99,14 +100,15 @@ const Section3 = () => {
             onClick={handleCategorySelection}
           >
             Cards & Stationery
+            <hr
+              className={` border-[1px] ${
+                categorySelected.includes("Cards & Stationery")
+                  ? "active-category"
+                  : "border-[#4e4d4e3a]"
+              }`}
+            />
           </p>
-          <hr
-            className={` border-[1px] ${
-              categorySelected.includes("Cards & Stationery")
-                ? "active-category"
-                : "border-[#4e4d4e3a]"
-            }`}
-          />
+
           <p
             className={` cursor-pointer hover:translate-x-5 transition ${
               categorySelected.includes("Homewares")
@@ -117,14 +119,14 @@ const Section3 = () => {
             onClick={handleCategorySelection}
           >
             Homewares
+            <hr
+              className={`border-[1px] ${
+                categorySelected.includes("Homewares")
+                  ? "active-category"
+                  : "border-[#4e4d4e3a]"
+              }`}
+            />
           </p>
-          <hr
-            className={`border-[1px] ${
-              categorySelected.includes("Homewares")
-                ? "active-category"
-                : "border-[#4e4d4e3a]"
-            }`}
-          />
         </div>
       </div>
     </div>
