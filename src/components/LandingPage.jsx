@@ -154,7 +154,7 @@ const LandingPage = () => {
           className="text-white  lg:text-[5rem] md:text-[4rem] sm:text-[3rem] text-[2.5rem] mt-20 px-11 text-center 
        w-[85%] m-auto text-wrap font-extrabold tracking-[3px] "
         >
-          <h1 className="main-text relative top-[2rem] capitalize flex w-full flex-wrap m-auto text-center justify-center">
+          <h1 className="main-text relative top-[2rem] capitalize flex w-full flex-wrap gap-3 m-auto text-center justify-center">
             <div className="flex">
               <span data-speed="1.255">P</span>
               <span data-speed="1.255" className="block">
@@ -186,7 +186,7 @@ const LandingPage = () => {
               </span>
             </div>
             <div className="flex">
-              <span data-speed="1.211" className="block">
+              <span data-speed="1.211" className="block  ml-2">
                 U
               </span>
               <span data-speed="1.211" className="block">

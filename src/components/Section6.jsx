@@ -24,9 +24,9 @@ const Section6 = () => {
             <p>Contact</p>
           </div>
         </div>
-        <div className="w-[400px] flex flex-col gap-3 text-lg">
+        <div className="md:w-[400px] w-full flex flex-col gap-3 text-lg">
           <strong className="text-3xl">Enjoy 5% off</strong>
-          <p>
+          <p className="text-wrap break-words">
             Sign up to our newsletter and be the first to hear when new
             collections drop. You’ll also receive 5% off your first order.
           </p>
