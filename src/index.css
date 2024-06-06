@@ -50,13 +50,13 @@ body {
   visibility: hidden;
 }
 
-.cursor {
+/* .cursor {
   width: 100vw;
   height: 100vh;
   background: transparent;
   position: fixed;
   z-index: 9999;
-}
+} */
 
 .cursor-example {
   position: fixed;
