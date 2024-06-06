@@ -108,7 +108,7 @@ const LandingPage = () => {
       <div className="cursor" />
       <div className="cursor-example" ref={cursorExampleRef} />
       <div className="h-screen bg-black flex items-center justify-center">
-        <h1 className="logo text-7xl text-white uppercase font-bold flex gap-2">
+        <h1 className="logo md:text-7xl sm:text-4xl text-2xl text-white uppercase font-bold flex gap-2">
           <span className="block">P</span>
           <span className="block">A</span>
           <span className="block">P</span>
