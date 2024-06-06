@@ -1,9 +1,9 @@
 const Section6 = () => {
   return (
-    <div className="section-6 bg-[#F4EB9E] p-[4rem] pt-[4rem]  pl-[7rem] flex flex-col justify-between h-auto gap-14">
-      <div className="flex justify-between align-middle text-[#373637]">
-        <div className="flex flex-1 justify-between text-lg">
-          <div className="">
+    <div className="section-6 bg-[#F4EB9E] md:p-[4rem] pt-[4rem]  md:pl-[7rem] pl-[2rem] p-[2rem] flex flex-col  justify-between h-auto gap-14">
+      <div className="flex justify-between md:flex-row flex-col gap-10 align-middle text-[#373637]">
+        <div className="flex flex-1 sm:flex-row  flex-col justify-between text-lg">
+          <div className="md:mb-1 mb-4 mr-4">
             <strong className="text-3xl">Paper + Land</strong>
           </div>
           <div className="flex flex-col gap-3">
@@ -32,7 +32,7 @@ const Section6 = () => {
           </p>
         </div>
       </div>
-      <div className="flex justify-between text-lg">
+      <div className="flex sm:flex-row flex-col gap-3 justify-between md:text-lg text-sm border-3 border-cyan-950">
         <p>© 2024 Paper + Land – Leeds, Yorkshire (UK). All rights reserved.</p>
         <p>Privacy Policy</p>
         <strong className="cursor-pointer">Instagram</strong>
