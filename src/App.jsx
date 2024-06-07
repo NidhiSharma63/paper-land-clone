@@ -18,19 +18,24 @@ let posY = 0;
 let mouseX = 0;
 let mouseY = 0;
 const App = () => {
+  const cursorRef = useRef(null);
   const scrollRef = useRef();
   useGSAP(() => {
     gsap.to(".cursor-example", {
       duration: 0.018,
       repeat: -1,
       onRepeat: () => {
-        posX += (mouseX - posX) / 8;
-        posY += (mouseY - posY) / 8;
+        posX += (mouseX - posX) / 2;
+        posY += (mouseY - posY) / 2;
+
+        // Clamp the positions to ensure they stay within visible boundaries
+        posX = Math.max(1, Math.min(posX, window.innerWidth - 10)); // Adjust '10' based on cursor size
+        posY = Math.max(1, Math.min(posY, window.innerHeight - 10));
 
         gsap.set(".cursor-example", {
           css: {
-            left: posX - 1,
-            top: posY - 2,
+            left: posX - 0,
+            top: posY - 0,
           },
         });
       },
@@ -53,7 +58,7 @@ const App = () => {
         return arguments.length
           ? locoScroll.scrollTo(value, { duration: 0, disableLerp: true })
           : locoScroll.scroll.instance.scroll.y;
-      }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+      },
       getBoundingClientRect() {
         return {
           top: 0,
@@ -62,10 +67,7 @@ const App = () => {
           height: window.innerHeight,
         };
       },
-      // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-      pinType: document.querySelector(".smooth-scroll").style.transform
-        ? "transform"
-        : "fixed",
+      pinType: scrollRef.current.style.transform ? "transform" : "fixed",
     });
 
     // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
@@ -73,30 +75,19 @@ const App = () => {
     ScrollTrigger.defaults({ scroller: ".smooth-scroll" });
     // --- SETUP END ---
 
-    // return () => {
-    //   ScrollTrigger.removeEventListener("refresh", () => locoScroll.update());
-    //   locoScroll.destroy();
-    // };
-
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-    return () => {
-      console.log("first");
-      document.removeEventListener("mousemove", (e) => {
+    document
+      .querySelector(".smooth-scroll")
+      .addEventListener("mousemove", (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
       });
-    };
   }, []);
 
   return (
     <div ref={scrollRef} className="smooth-scroll ">
-      <div className="cursor"></div>
-
-      <div className="cursor-example"></div>
-      <LandingPage />
+      <div className="cursor" />
+      <div className="cursor-example" ref={cursorRef} />
+      <LandingPage ref={cursorRef} />
       <Section2 />
       <Section3 />
       <Section4 />

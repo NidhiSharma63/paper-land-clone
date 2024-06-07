@@ -1,13 +1,14 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import _ScrollTrigger from "gsap/ScrollTrigger";
-import { useCallback, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 gsap.registerPlugin(_ScrollTrigger);
 
-const LandingPage = () => {
+const LandingPage = React.forwardRef((props, ref) => {
   const cursorExampleRef = useRef(null);
   const logoRef = useRef(null);
   const [mouseEnter, setMouseEnter] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   // add text animation using gsap
 
   useGSAP(() => {
@@ -93,22 +94,23 @@ const LandingPage = () => {
   // }, []);
 
   const handleMouseEnter = useCallback(() => {
-    // cursor.classList.add('grow');
-    // if
-    cursorExampleRef.current.classList.add("grow");
-  }, []);
+    ref.current?.classList.add("grow");
+  }, [ref]);
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     // console.log("mouse out");
-    cursorExampleRef.current.classList.remove("grow");
-    cursorExampleRef.current.classList.remove("grow-small");
-  };
+    ref.current?.classList.remove("grow");
+    ref.current?.classList.remove("grow-small");
+  }, [ref]);
+
   return (
     <div data-scroll data-scroll-speed="-3">
-      <div className="cursor" />
-      <div className="cursor-example" ref={cursorExampleRef} />
       <div className="h-screen bg-black flex items-center justify-center">
-        <h1 className="logo md:text-7xl sm:text-4xl text-2xl text-white uppercase font-bold flex gap-2">
+        <h1
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="logo md:text-7xl sm:text-4xl text-2xl text-white uppercase font-bold flex gap-2"
+        >
           <span className="block">P</span>
           <span className="block">A</span>
           <span className="block">P</span>
@@ -125,24 +127,16 @@ const LandingPage = () => {
       <div className="greenish-div absolute w-0 top-0 right-0 z-2 bg-[#16a991] h-full" />
       <div className="main-div absolute w-full h-full top-0 right-0 z-3 flex justify-between">
         <header className="header flex w-full justify-between align-middle text-white md:p-11 p-4">
-          {/* <div
+          <h1
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
             ref={logoRef}
-            className="flex align-middle justify-center w-[250px] h-[50px]"
-            // onMouseEnter={() => {
-            //   console.log("mouseEnter");
-            // }}
-            onMouseMove={() => {
-              console.log("mouseMove");
-            }}
-            onMouseLeave={() => {
-              console.log("mouseLeave");
-            }}
-          > */}
-          <h1 className="md:text-2xl text-lg uppercase font-extrabold md:tracking-[3px] tracking-[1.8px]">
+            className="logo md:text-2xl text-lg uppercase font-extrabold md:tracking-[3px] tracking-[1.8px]"
+          >
             Paper + Land
           </h1>
-          {/* </div> */}
-          <div className="flex md:gap-12 gap-4 text-[#272624da] bg-[#cdc5bfa0] align-middle justify-between md:px-12 md:py-6 px-6 py-3 md:text-2xl text-lg rounded-full">
+          <h1 className={`${isHovered ? "block" : "hidden"}`}>MouseMoiving</h1>
+          <div className="flex md:gap-12 gap-4 text-[#272624da] bg-[#cdc5bfa0]  align-middle justify-between md:px-12 md:py-6 px-6 py-3 md:text-2xl text-lg rounded-full">
             <i className="fa-solid fa-cart-shopping" />
             <div className="flex items-center justify-between md:gap-3 gap-1">
               <i className="fa-solid fa-magnifying-glass" />
@@ -154,7 +148,11 @@ const LandingPage = () => {
           className="text-white  lg:text-[5rem] md:text-[4rem] sm:text-[3rem] text-[2.5rem] mt-20 px-11 text-center 
        w-[85%] m-auto text-wrap font-extrabold tracking-[3px] "
         >
-          <h1 className="main-text relative top-[2rem] capitalize flex w-full flex-wrap gap-3 m-auto text-center justify-center">
+          <h1
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="logo main-text relative top-[2rem] capitalize flex w-full flex-wrap gap-3 m-auto text-center justify-center"
+          >
             <div className="flex">
               <span data-speed="1.255">P</span>
               <span data-speed="1.255" className="block">
@@ -248,6 +246,8 @@ const LandingPage = () => {
       </div>
     </div>
   );
-};
+});
+
+LandingPage.displayName = "LandingPage";
 
 export default LandingPage;

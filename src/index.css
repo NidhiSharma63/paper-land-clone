@@ -65,7 +65,20 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 100%;
-  background-color: rgba(161, 157, 157, 0.589);
+  background-color: rgba(31, 29, 29, 0.904);
   z-index: 9999;
+  pointer-events: none;
 
+}
+
+
+.grow, .grow-small{
+  transform: scale(4);
+  background: white;
+  mix-blend-mode: difference; 
+  border: none;
+}
+
+.grow-small{
+  transform: scale(2);
 }
