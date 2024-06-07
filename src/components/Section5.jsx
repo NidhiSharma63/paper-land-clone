@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import React, { useCallback } from "react";
 
 const data = [
   {
@@ -24,7 +25,7 @@ const data = [
   },
 ];
 
-const Section5 = () => {
+const Section5 = React.forwardRef((_, ref) => {
   useGSAP(() => {
     gsap.from(".section-5-card-image", {
       scale: 1.5,
@@ -38,11 +39,31 @@ const Section5 = () => {
       },
     });
   });
+
+  const handleMouseEnter = useCallback(() => {
+    ref.current?.classList.add("section-3-cursor-animation-img");
+  }, [ref]);
+
+  const handleMouseLeave = useCallback(() => {
+    ref.current?.classList.remove("section-3-cursor-animation-img");
+  }, [ref]);
+
+  const handleMouseEnterCursor = useCallback(() => {
+    ref.current?.classList.add("section-3-cursor-animation");
+  }, [ref]);
+
+  const handleMouseLeaveCursor = useCallback(() => {
+    ref.current?.classList.remove("section-3-cursor-animation");
+  }, [ref]);
   return (
     <div className="section-5 h-auto flex  bg-[#fccff6] text-[#373637] align-middle justify-between md:p-[4rem] pt-[4rem] p-[1rem] pl-[1rem] md:pl-[7rem] flex-col gap-16">
       <div className="flex align-middle justify-start gap-12">
         <h3 className="text-2xl font-bold heading">More Products</h3>
-        <button className="border-2 px-4 py-1 rounded text-[11px] font-medium tracking-wide border-[#181816cc]">
+        <button
+          onMouseEnter={handleMouseEnterCursor}
+          onMouseLeave={handleMouseLeaveCursor}
+          className="border-2 px-4 py-1 rounded text-[11px] font-medium tracking-wide border-[#181816cc]"
+        >
           VIEW ALL
         </button>
       </div>
@@ -59,6 +80,8 @@ const Section5 = () => {
                   className="w-full h-full transition-transform duration-300 ease-out group-hover:scale-110 section-5-card-image"
                   src={elem.image}
                   alt={elem.heading1}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                 />
               </div>
               <div className="flex flex-col align-middle text-center">
@@ -76,6 +99,8 @@ const Section5 = () => {
       </div>
     </div>
   );
-};
+});
+
+Section5.displayName = "Section5";
 
 export default Section5;

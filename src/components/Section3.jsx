@@ -1,9 +1,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 // import Image1 from "../assets/Art.webp";
 
-const Section3 = () => {
+const Section3 = React.forwardRef((_, ref) => {
   const [isHovered, setIsHovered] = useState(false);
   const [categorySelected, setCategorySelected] = useState("Art Prints");
   const [imageUrl, setimageUrl] = useState("src/assets/Art.webp");
@@ -25,11 +25,13 @@ const Section3 = () => {
 
   const handleMouseEnter = useCallback(() => {
     setIsHovered(true);
-  }, []);
+    ref.current?.classList.add("section-3-cursor-animation-img");
+  }, [ref]);
 
   const handleMouseLeave = useCallback(() => {
     setIsHovered(false);
-  }, []);
+    ref.current?.classList.remove("section-3-cursor-animation-img");
+  }, [ref]);
 
   const handleCategorySelection = useCallback((event) => {
     setCategorySelected(event.target.dataset.category);
@@ -43,11 +45,23 @@ const Section3 = () => {
     }, 400);
   }, []);
 
+  const handleMouseEnterCursor = useCallback(() => {
+    ref.current?.classList.add("section-3-cursor-animation");
+  }, [ref]);
+
+  const handleMouseLeaveCursor = useCallback(() => {
+    ref.current?.classList.remove("section-3-cursor-animation");
+  }, [ref]);
+
   return (
     <div className="section-3 h-auto gap-8 flex  bg-[#fccff6] text-[#373637] align-middle justify-between md:p-[4rem] p-[2rem] pt-[4rem] md:pl-[7rem] pl-[2rem] flex-col ">
       <div className="flex align-middle justify-start gap-12">
         <h3 className="text-2xl font-bold heading">Product Collections</h3>
-        <button className="border-2 px-4 py-1 rounded text-[11px] font-medium tracking-wide border-[#181816cc]">
+        <button
+          onMouseEnter={handleMouseEnterCursor}
+          onMouseLeave={handleMouseLeaveCursor}
+          className="border-2 px-4 py-1 rounded text-[11px] font-medium tracking-wide border-[#181816cc] hover:bg-[#181816ee] hover:text-white transition-all duration-500"
+        >
           VIEW ALL PRODUCTS
         </button>
       </div>
@@ -62,7 +76,7 @@ const Section3 = () => {
             src={imageUrl}
             alt="showcase-image"
             className={`w-full h-full ${
-              isHovered ? "scale-110" : "scale-100"
+              isHovered ? "scale-125" : "scale-100"
             } transition-all duration-500 cursor-pointer object-cover 
             ${removeImage ? "removeImage" : ""}`}
             onMouseEnter={handleMouseEnter}
@@ -71,6 +85,8 @@ const Section3 = () => {
         </div>
         <div className="section-3-text flex md:flex-col  flex-wrap flex-row gap-4 mt-3 md:text-2xl text-lg">
           <p
+            onMouseEnter={handleMouseEnterCursor}
+            onMouseLeave={handleMouseLeaveCursor}
             className={` cursor-pointer hover:translate-x-5 transition ${
               categorySelected.includes("Art Prints")
                 ? "active-category"
@@ -91,6 +107,8 @@ const Section3 = () => {
           </p>
 
           <p
+            onMouseEnter={handleMouseEnterCursor}
+            onMouseLeave={handleMouseLeaveCursor}
             className={` cursor-pointer hover:translate-x-5 transition ${
               categorySelected.includes("Cards & Stationery")
                 ? "active-category"
@@ -110,6 +128,8 @@ const Section3 = () => {
           </p>
 
           <p
+            onMouseEnter={handleMouseEnterCursor}
+            onMouseLeave={handleMouseLeaveCursor}
             className={` cursor-pointer hover:translate-x-5 transition ${
               categorySelected.includes("Homewares")
                 ? "active-category"
@@ -131,6 +151,7 @@ const Section3 = () => {
       </div>
     </div>
   );
-};
+});
 
+Section3.displayName = "Section3";
 export default Section3;

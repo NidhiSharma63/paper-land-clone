@@ -53,9 +53,10 @@ body {
 /* .cursor {
   width: 100vw;
   height: 100vh;
-  background: transparent;
+  background: red;
   position: fixed;
   z-index: 9999;
+  top: 0;
 } */
 
 .cursor-example {
@@ -82,3 +83,21 @@ body {
 .grow-small{
   transform: scale(2);
 }
+
+.section-3-cursor-animation{
+  transform: scale(3);
+  border: 1px solid rgba(5, 5, 5, 0.822);
+  background-color: transparent;
+  /* border-width: .3px; */
+}
+.section-3-cursor-animation-img{
+  transform: scale(3);
+  border: 1px solid rgba(238, 238, 238, 0.822);
+  background-color: rgba(238, 238, 238, 0.438);
+
+}
+/* .section-3-cursor-animation-category{
+  transform: scale(3);
+  border: 1px solid rgba(5, 5, 5, 0.822);
+  background-color: transparent;
+} */

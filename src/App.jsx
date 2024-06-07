@@ -59,14 +59,14 @@ const App = () => {
           ? locoScroll.scrollTo(value, { duration: 0, disableLerp: true })
           : locoScroll.scroll.instance.scroll.y;
       },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
+      // getBoundingClientRect() {
+      //   return {
+      //     top: 0,
+      //     left: 0,
+      //     width: window.innerWidth,
+      //     height: window.innerHeight,
+      //   };
+      // },
       pinType: scrollRef.current.style.transform ? "transform" : "fixed",
     });
 
@@ -75,23 +75,28 @@ const App = () => {
     ScrollTrigger.defaults({ scroller: ".smooth-scroll" });
     // --- SETUP END ---
 
-    document
-      .querySelector(".smooth-scroll")
-      .addEventListener("mousemove", (e) => {
+    window.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    return () => {
+      window.removeEventListener("mousemove", (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
       });
+    };
   }, []);
 
   return (
     <div ref={scrollRef} className="smooth-scroll ">
-      <div className="cursor" />
+      {/* <div className="cursor" /> */}
       <div className="cursor-example" ref={cursorRef} />
       <LandingPage ref={cursorRef} />
       <Section2 />
-      <Section3 />
-      <Section4 />
-      <Section5 />
+      <Section3 ref={cursorRef} />
+      <Section4 ref={cursorRef} />
+      <Section5 ref={cursorRef} />
       <Section6 />
     </div>
   );

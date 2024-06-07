@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import React, { useCallback } from "react";
 
 const data = [
   {
@@ -16,7 +17,7 @@ const data = [
   },
 ];
 
-const Section4 = () => {
+const Section4 = React.forwardRef((_, ref) => {
   useGSAP(() => {
     const timeline = gsap.timeline();
 
@@ -119,11 +120,32 @@ const Section4 = () => {
       },
     });
   });
+
+  const handleMouseEnter = useCallback(() => {
+    ref.current?.classList.add("section-3-cursor-animation-img");
+  }, [ref]);
+
+  const handleMouseLeave = useCallback(() => {
+    ref.current?.classList.remove("section-3-cursor-animation-img");
+  }, [ref]);
+
+  const handleMouseEnterCursor = useCallback(() => {
+    ref.current?.classList.add("section-3-cursor-animation");
+  }, [ref]);
+
+  const handleMouseLeaveCursor = useCallback(() => {
+    ref.current?.classList.remove("section-3-cursor-animation");
+  }, [ref]);
+
   return (
     <div className="section-4 h-auto flex  bg-[#fccff6] text-[#373637] align-middle justify-between md:p-[4rem]  md:pl-[4rem] p-[2rem] pl-[2rem] flex-col gap-16">
       <div className="flex align-middle justify-start gap-12">
         <h3 className="text-2xl font-bold heading">Bestsellers</h3>
-        <button className="border-2 px-4 py-1 rounded text-[11px] font-medium tracking-wide border-[#181816cc]">
+        <button
+          onMouseEnter={handleMouseEnterCursor}
+          onMouseLeave={handleMouseLeaveCursor}
+          className="border-2 px-4 py-1 rounded text-[11px] font-medium tracking-wide border-[#181816cc]"
+        >
           VIEW ALL PRODUCTS
         </button>
       </div>
@@ -135,6 +157,8 @@ const Section4 = () => {
               key={item.image}
             >
               <h1
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
                 className={`section-4-text-${item.className} md:text-7xl text-3xl text-white uppercase absolute z-20 md:top-[200px] top-[100px] md:left-[100px] left-[50px] md:w-[540px] w-[300px] text-wrap`}
               >
                 <div className="flex">
@@ -176,6 +200,8 @@ const Section4 = () => {
               </div>
               <div className="imageContainer max-w-[1050px] max-h-[600px] rounded-xl overflow-hidden ">
                 <img
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                   className="image w-full h-full object-cover md:translate-y-[-90px] translate-y-0"
                   src={item.image}
                   alt="art"
@@ -187,6 +213,8 @@ const Section4 = () => {
       </div>
     </div>
   );
-};
+});
 
+Section4.displayName = "Section4";
+  
 export default Section4;

@@ -60,38 +60,8 @@ const LandingPage = React.forwardRef((props, ref) => {
         trigger: ".smooth-scroll",
       },
     });
-
-    // logoRef.current?.forEach((link) => {
   });
 
-  // useEffect(() => {
-  //   if (!logoRef.current) {
-  //     return;
-  //   }
-
-  //   const handleMouseEnter = () => {
-  //     cursorExampleRef.current.classList.add("grow");
-  //   };
-
-  //   const handleMouseLeave = () => {
-  //     // console.log("mouse out");
-  //     cursorExampleRef.current.classList.remove("grow");
-  //     cursorExampleRef.current.classList.remove("grow-small");
-  //   };
-
-  //   const newRef = logoRef.current;
-  //   newRef.addEventListener("mousemove", handleMouseEnter);
-  //   newRef.addEventListener("mouseleave", handleMouseLeave); // Use mouseleave instead of mouseout
-
-  //   newRef.addEventListener("mouseenter", () => console.log("Mouse Enter"));
-  //   newRef.addEventListener("mouseover", () => console.log("Mouse Over"));
-  //   // newRef.addEventListener("mouseleave", () => console.log("Mouse Leave"));
-  //   // newRef.addEventListener("mouseout", () => console.log("Mouse Out"));
-  //   return () => {
-  //     newRef.removeEventListener("mousemove", handleMouseEnter);
-  //     newRef.removeEventListener("mouseleave", handleMouseLeave);
-  //   };
-  // }, []);
 
   const handleMouseEnter = useCallback(() => {
     ref.current?.classList.add("grow");
