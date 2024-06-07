@@ -4,13 +4,13 @@ import React, { useCallback } from "react";
 
 const data = [
   {
-    image: "src/assets/kitchen.webp",
+    image: "/assets/kitchen.webp",
     heading1: "Midsummer",
     heading2: "Honey",
     className: "first-section",
   },
   {
-    image: "src/assets/sunrise.webp",
+    image: "/assets/sunrise.webp",
     heading1: "Sunrise",
     heading2: "Calm",
     className: "second-section",

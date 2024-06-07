@@ -1,12 +1,11 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useCallback, useState } from "react";
-// import Image1 from "../assets/Art.webp";
 
 const Section3 = React.forwardRef((_, ref) => {
   const [isHovered, setIsHovered] = useState(false);
   const [categorySelected, setCategorySelected] = useState("Art Prints");
-  const [imageUrl, setimageUrl] = useState("src/assets/Art.webp");
+  const [imageUrl, setimageUrl] = useState("/assets/Art.webp");
   const [removeImage, setRemoveImage] = useState(false);
 
   useGSAP(() => {
@@ -39,7 +38,7 @@ const Section3 = React.forwardRef((_, ref) => {
     // change image url
     setTimeout(() => {
       setimageUrl(
-        `src/assets/${event.target.dataset.category.split(" ")[0]}.webp`
+        `/assets/${event.target.dataset.category.split(" ")[0]}.webp`
       );
       setRemoveImage(false);
     }, 400);

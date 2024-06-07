@@ -4,22 +4,22 @@ import React, { useCallback } from "react";
 
 const data = [
   {
-    image: "src/assets/kitchen.webp",
+    image: "/assets/kitchen.webp",
     heading1: "Frozen Blush",
     heading2: "Skipton Art Place",
   },
   {
-    image: "src/assets/Cards.webp",
+    image: "/assets/Cards.webp",
     heading1: "Sunrise Blush",
     heading2: "Skipton Art Place",
   },
   {
-    image: "src/assets/Art.webp",
+    image: "/assets/Art.webp",
     heading1: "Calm Blush",
     heading2: "Skipton Art Place",
   },
   {
-    image: "src/assets/sunrise.webp",
+    image: "/assets/sunrise.webp",
     heading1: "Twilight Blush",
     heading2: "sunrise Art Place",
   },
