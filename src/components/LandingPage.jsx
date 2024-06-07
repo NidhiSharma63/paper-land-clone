@@ -1,14 +1,11 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import _ScrollTrigger from "gsap/ScrollTrigger";
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useRef } from "react";
 gsap.registerPlugin(_ScrollTrigger);
 
 const LandingPage = React.forwardRef((props, ref) => {
-  const cursorExampleRef = useRef(null);
-  const logoRef = useRef(null);
-  const [mouseEnter, setMouseEnter] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  const loadingTextAnimationRef = useRef(null);
   // add text animation using gsap
 
   useGSAP(() => {
@@ -62,7 +59,6 @@ const LandingPage = React.forwardRef((props, ref) => {
     });
   });
 
-
   const handleMouseEnter = useCallback(() => {
     ref.current?.classList.add("grow");
   }, [ref]);
@@ -77,6 +73,7 @@ const LandingPage = React.forwardRef((props, ref) => {
     <div data-scroll data-scroll-speed="-3">
       <div className="h-screen bg-black flex items-center justify-center">
         <h1
+          ref={loadingTextAnimationRef}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           className="logo md:text-7xl sm:text-4xl text-2xl text-white uppercase font-bold flex gap-2"
@@ -100,12 +97,10 @@ const LandingPage = React.forwardRef((props, ref) => {
           <h1
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            ref={logoRef}
             className="logo md:text-2xl text-lg uppercase font-extrabold md:tracking-[3px] tracking-[1.8px]"
           >
             Paper + Land
           </h1>
-          <h1 className={`${isHovered ? "block" : "hidden"}`}>MouseMoiving</h1>
           <div className="flex md:gap-12 gap-4 text-[#272624da] bg-[#cdc5bfa0]  align-middle justify-between md:px-12 md:py-6 px-6 py-3 md:text-2xl text-lg rounded-full">
             <i className="fa-solid fa-cart-shopping" />
             <div className="flex items-center justify-between md:gap-3 gap-1">
