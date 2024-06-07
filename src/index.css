@@ -18,7 +18,7 @@ body {
 
 /* main page bg image */
 .main-div{
-  background-image: url("./assets/mainBgImage.jpg");
+  background-image: url("../public/assets/mainBgImage.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
