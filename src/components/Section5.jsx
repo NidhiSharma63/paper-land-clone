@@ -28,15 +28,18 @@ const data = [
 const Section5 = React.forwardRef((_, ref) => {
   useGSAP(() => {
     gsap.from(".section-5-card-image", {
-      scale: 1.5,
+      scale: 0.7,
+      opacity: 0,
+      duration: 1,
       scrollTrigger: {
         start: "top 20%",
-        end: "bottom bottom",
+        end: "bottom 70%",
         invalidateOnRefresh: true,
         scrub: 1,
         // markers: true,
         trigger: ".section-5",
       },
+      ease: "ease.in",
     });
   });
 
@@ -77,7 +80,7 @@ const Section5 = React.forwardRef((_, ref) => {
             >
               <div className="w-full rounded-xl overflow-hidden">
                 <img
-                  className="w-full h-full transition-transform duration-300 ease-out group-hover:scale-110 section-5-card-image"
+                  className="w-full h-full transition-transform duration-300 ease-out group-hover:scale-110  section-5-card-image"
                   src={elem.image}
                   alt={elem.heading1}
                   onMouseEnter={handleMouseEnter}
@@ -102,5 +105,4 @@ const Section5 = React.forwardRef((_, ref) => {
 });
 
 Section5.displayName = "Section5";
-
 export default Section5;
