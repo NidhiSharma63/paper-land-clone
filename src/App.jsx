@@ -29,8 +29,14 @@ const App = () => {
         posY += (mouseY - posY) / 2;
 
         // Clamp the positions to ensure they stay within visible boundaries
-        posX = Math.max(1, Math.min(posX, window.innerWidth - 10)); // Adjust '10' based on cursor size
-        posY = Math.max(1, Math.min(posY, window.innerHeight - 10));
+        posX = Math.max(
+          1,
+          Math.min(posX, document.documentElement.clientWidth - 10)
+        ); // Adjust '10' based on cursor size
+        posY = Math.max(
+          1,
+          Math.min(posY, document.documentElement.clientHeight - 10)
+        );
 
         gsap.set(".cursor-example", {
           css: {
@@ -80,12 +86,12 @@ const App = () => {
       mouseY = e.clientY;
     });
 
-    return () => {
-      window.removeEventListener("mousemove", (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-      });
-    };
+    // return () => {
+    //   window.removeEventListener("mousemove", (e) => {
+    //     mouseX = e.clientX;
+    //     mouseY = e.clientY;
+    //   });
+    // };
   }, []);
 
   return (
