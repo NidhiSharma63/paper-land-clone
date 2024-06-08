@@ -1,5 +1,6 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 
 const data = [
   {
@@ -25,21 +26,7 @@ const data = [
 ];
 
 const Section5 = React.forwardRef((_, ref) => {
-  // useGSAP(() => {
-  //   gsap.from(".section-5-card-image", {
-  //     scale: 1.5,
-  //     scrollTrigger: {
-  //       start: "top 20%",
-  //       end: "bottom bottom",
-  //       invalidateOnRefresh: true,
-  //       scrub: 1,
-  //       // markers: true,
-  //       trigger: ".section-5",
-  //     },
-  //   });
-  // });
-
-  useEffect(() => {
+  useGSAP(() => {
     gsap.from(".section-5-card-image", {
       scale: 1.5,
       scrollTrigger: {
@@ -47,11 +34,12 @@ const Section5 = React.forwardRef((_, ref) => {
         end: "bottom bottom",
         invalidateOnRefresh: true,
         scrub: 1,
-        markers: true, // Enable markers for debugging
+        // markers: true,
         trigger: ".section-5",
       },
     });
-  }, []);
+  });
+
   const handleMouseEnter = useCallback(() => {
     ref.current?.classList.add("section-3-cursor-animation-img");
   }, [ref]);

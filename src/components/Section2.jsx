@@ -13,7 +13,7 @@ const Section2 = () => {
         start: "top 80%",
         end: "bottom bottom",
         scrub: 2, // Increased scrub duration,
-        markers: true,
+        // markers: true,
         trigger: ".section-2",
       },
     });
