@@ -46,7 +46,7 @@ const LandingPage = React.forwardRef((props, ref) => {
     // apply parallax effect to any element with a data-speed attribute
     gsap.to("[data-speed]", {
       y: (i, el) =>
-        (1 - Number.parseFloat(el.getAttribute("data-speed"))) * 402,
+        (1 - Number.parseFloat(el.getAttribute("data-speed"))) * 9902,
       ease: "none",
       scrollTrigger: {
         start: 0,
@@ -70,7 +70,7 @@ const LandingPage = React.forwardRef((props, ref) => {
   }, [ref]);
 
   return (
-    <div data-scroll data-scroll-speed="-3">
+    <div>
       <div className="h-screen bg-black flex items-center justify-center">
         <h1
           ref={loadingTextAnimationRef}

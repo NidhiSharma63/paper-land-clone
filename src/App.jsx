@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import LocomotiveScroll from "locomotive-scroll";
+// import LocomotiveScroll from "locomotive-scroll";
 import { useEffect, useRef } from "react";
 import LandingPage from "./components/LandingPage";
 import Section2 from "./components/Section2";
@@ -51,34 +51,34 @@ const App = () => {
   useEffect(() => {
     // --- SETUP START ---
     // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
-    const locoScroll = new LocomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-    });
-    // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
-    locoScroll.on("scroll", ScrollTrigger.update);
+    // const locoScroll = new LocomotiveScroll({
+    //   el: scrollRef.current,
+    //   smooth: true,
+    // });
+    // // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+    // locoScroll.on("scroll", ScrollTrigger.update);
 
-    // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
-    ScrollTrigger.scrollerProxy(scrollRef.current, {
-      scrollTop(value) {
-        return arguments.length
-          ? locoScroll.scrollTo(value, { duration: 0, disableLerp: true })
-          : locoScroll.scroll.instance.scroll.y;
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-      pinType: scrollRef.current.style.transform ? "transform" : "fixed",
-    });
+    // // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
+    // ScrollTrigger.scrollerProxy(scrollRef.current, {
+    //   scrollTop(value) {
+    //     return arguments.length
+    //       ? locoScroll.scrollTo(value, { duration: 0, disableLerp: true })
+    //       : locoScroll.scroll.instance.scroll.y;
+    //   },
+    //   getBoundingClientRect() {
+    //     return {
+    //       top: 0,
+    //       left: 0,
+    //       width: window.innerWidth,
+    //       height: window.innerHeight,
+    //     };
+    //   },
+    //   pinType: scrollRef.current.style.transform ? "transform" : "fixed",
+    // });
 
-    // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
-    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-    ScrollTrigger.defaults({ scroller: ".smooth-scroll" });
+    // // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
+    // ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+    // ScrollTrigger.defaults({ scroller: ".smooth-scroll" });
     // --- SETUP END ---
 
     window.addEventListener("mousemove", (e) => {
