@@ -11,7 +11,7 @@ const LandingPage = React.forwardRef((props, ref) => {
   useGSAP(() => {
     const timeline = gsap.timeline();
 
-    timeline.from(".logo span", {
+    timeline.from(".first-screen-text span", {
       opacity: 0,
       scale: 0.1,
       y: 10, // Increased duration
@@ -76,7 +76,7 @@ const LandingPage = React.forwardRef((props, ref) => {
           ref={loadingTextAnimationRef}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="logo md:text-7xl sm:text-4xl text-2xl text-white uppercase font-bold flex gap-2"
+          className="logo first-screen-text md:text-7xl sm:text-4xl text-2xl text-white uppercase font-bold flex gap-2"
         >
           <span className="block">P</span>
           <span className="block">A</span>
