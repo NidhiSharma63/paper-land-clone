@@ -59,14 +59,14 @@ const App = () => {
           ? locoScroll.scrollTo(value, { duration: 0, disableLerp: true })
           : locoScroll.scroll.instance.scroll.y;
       },
-      // getBoundingClientRect() {
-      //   return {
-      //     top: 0,
-      //     left: 0,
-      //     width: window.innerWidth,
-      //     height: window.innerHeight,
-      //   };
-      // },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      },
       pinType: scrollRef.current.style.transform ? "transform" : "fixed",
     });
 
