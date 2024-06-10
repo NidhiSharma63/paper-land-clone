@@ -22,12 +22,12 @@ const Section2 = () => {
     <div
       data-scroll
       data-scroll-speed="0"
-      className="section-2 max-w-[1440px] m-auto h-screen flex border-2 bg-[#fccff6] text-[#373637] align-middle justify-center md:p-[4rem] p-[2rem] pt-[8rem] md:gap-12 gap-6 flex-col lg:flex-row"
+      className="section-2 max-w-[1920px] m-auto h-screen flex border-2 bg-[#fccff6] text-[#373637] align-middle justify-center md:p-[4rem] p-[2rem] pt-[8rem] md:gap-12 gap-6 flex-col lg:flex-row"
     >
       {/* <div className="w-[80%] h-[80%] m-auto border-2 flex gap-24"> */}
       <div className="">
         <p
-          className="md:text-4xl text-3xl font-bold section-2-text w-[300px]"
+          className="md:text-4xl 2xl:text-5xl  text-3xl font-bold section-2-text w-[300px]"
           data-scroll
           data-scroll-speed="-2"
           direction="vertical"
@@ -42,7 +42,7 @@ const Section2 = () => {
         </p>
       </div>
       <div>
-        <p className="section-2-text md:text-3xl text-xl tracking-[.1rem] md:leading-[4rem] leading-[2.8rem] italic">
+        <p className="section-2-text md:text-3xl 2xl:text-4xl  text-xl tracking-[.1rem] 2xl:leading-[5rem] md:leading-[4rem] leading-[2.8rem] italic">
           <span className="inline-block">Paper</span>&nbsp;
           <span className="inline-block">+</span>&nbsp;
           <span className="inline-block">Land</span>&nbsp;
