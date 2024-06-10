@@ -70,13 +70,13 @@ const LandingPage = React.forwardRef((props, ref) => {
   }, [ref]);
 
   return (
-    <div className="w-screen ">
+    <div className="">
       <div className="h-screen w-screen bg-black flex items-center justify-center">
         <h1
           ref={loadingTextAnimationRef}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="logo first-screen-text 2xl:text-9xl 2xl:border-2 md:text-7xl sm:text-4xl text-2xl text-white uppercase font-bold flex gap-2"
+          className="logo first-screen-text 2xl:text-9xl  3xl:text-[11rem] md:text-7xl sm:text-4xl text-2xl text-white uppercase font-bold flex gap-2"
         >
           <span className="block">P</span>
           <span className="block">A</span>
@@ -97,11 +97,11 @@ const LandingPage = React.forwardRef((props, ref) => {
           <h1
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="logo md:text-2xl text-lg uppercase font-extrabold md:tracking-[3px] tracking-[1.8px]"
+            className="logo md:text-2xl 2xl:text-4xl 3xl:text-6xl text-lg uppercase font-extrabold md:tracking-[3px] tracking-[1.8px]"
           >
             Paper + Land
           </h1>
-          <div className="flex md:gap-12 gap-4 text-[#272624da] bg-[#cdc5bfa0]  align-middle justify-between md:px-12 md:py-6 px-6 py-3 md:text-2xl text-lg rounded-full">
+          <div className="flex md:gap-12 gap-4 text-[#272624da] bg-[#cdc5bfa0]  align-middle justify-between md:px-12 md:py-6 px-6 py-3 md:text-2xl text-lg 2xl:text-3xl 3xl:text-6xl rounded-full">
             <i className="fa-solid fa-cart-shopping" />
             <div className="flex items-center justify-between md:gap-3 gap-1">
               <i className="fa-solid fa-magnifying-glass" />
@@ -110,7 +110,7 @@ const LandingPage = React.forwardRef((props, ref) => {
           </div>
         </header>
         <div
-          className="text-white  lg:text-[5rem] md:text-[4rem] sm:text-[3rem] text-[2.5rem] mt-20 px-11 text-center 
+          className="text-white  lg:text-[5rem] 2xl:text-9xl  3xl:text-[11rem] md:text-[4rem] sm:text-[3rem] text-[2.5rem] mt-20 px-11 text-center 
        w-[85%] m-auto text-wrap font-extrabold tracking-[3px] "
         >
           <h1
