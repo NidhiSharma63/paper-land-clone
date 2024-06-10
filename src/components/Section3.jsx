@@ -80,7 +80,7 @@ const Section3 = React.forwardRef((_, ref) => {
               onMouseLeave={handleMouseLeave}
             />
           </div>
-          <div className="section-3-text flex md:flex-col  flex-wrap flex-row md:gap-4 2xl:gap-8 3xl:gap-12 mt-3 md:text-2xl 2xl:text-3xl 3xl:text-4xl text-lg">
+          <div className="section-3-text flex md:flex-col  flex-wrap gap-4 flex-row md:gap-4 2xl:gap-8 3xl:gap-12 mt-3 md:text-2xl 2xl:text-3xl 3xl:text-4xl text-lg">
             <p
               onMouseEnter={handleMouseEnterCursor}
               onMouseLeave={handleMouseLeaveCursor}
