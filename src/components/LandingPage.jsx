@@ -29,7 +29,7 @@ const LandingPage = React.forwardRef((props, ref) => {
       ease: "power2.out",
       scale: 1,
       onComplete: () => {
-        document.querySelector(".main-div").style.display = "block";
+        document.querySelector(".main-div").style.display = "flex";
       },
     });
 
@@ -92,7 +92,7 @@ const LandingPage = React.forwardRef((props, ref) => {
       </div>
       <div className="pinkish-div absolute bottom-0 z-1 bg-[#D6BAD0] w-full" />
       <div className="greenish-div absolute w-0 top-0 right-0 z-2 bg-[#16a991] h-full" />
-      <div className="main-div absolute w-full h-full top-0 right-0 z-3 flex justify-between">
+      <div className="main-div absolute w-full h-full top-0 right-0 z-3 flex justify-between flex-col">
         <header className="header flex w-full justify-between align-middle text-white md:p-11 p-4">
           <h1
             onMouseEnter={handleMouseEnter}
@@ -110,13 +110,13 @@ const LandingPage = React.forwardRef((props, ref) => {
           </div>
         </header>
         <div
-          className="text-white  lg:text-[5rem] 2xl:text-9xl  3xl:text-[11rem] md:text-[4rem] sm:text-[3rem] text-[2.5rem] mt-20 px-11 text-center 
-       w-[85%] m-auto text-wrap font-extrabold tracking-[3px] "
+          className="text-white lg:text-[5rem] 2xl:text-[7rem]  3xl:text-[9rem] md:text-[4rem] sm:text-[3rem] text-[2.5rem]  px-11 text-center 
+       w-[85%] m-auto text-wrap font-extrabold tracking-[3px]"
         >
           <h1
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="logo main-text relative top-[2rem] capitalize flex w-full flex-wrap gap-3 m-auto text-center justify-center"
+            className="logo main-text relative top-[2rem] capitalize flex w-full flex-wrap m-auto text-center justify-center"
           >
             <div className="flex">
               <span data-speed="1.255">P</span>
@@ -149,7 +149,7 @@ const LandingPage = React.forwardRef((props, ref) => {
               </span>
             </div>
             <div className="flex">
-              <span data-speed="1.211" className="block  ml-2">
+              <span data-speed="1.211" className="block  ml-9">
                 U
               </span>
               <span data-speed="1.211" className="block">
@@ -177,7 +177,7 @@ const LandingPage = React.forwardRef((props, ref) => {
                 G
               </span>
             </div>
-            <div className="flex">
+            <div className="flex 3xl:ml-9 ml-0">
               <span data-speed="1.277" className="block">
                 L
               </span>
