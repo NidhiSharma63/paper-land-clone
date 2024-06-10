@@ -68,7 +68,7 @@ const Section3 = React.forwardRef((_, ref) => {
           </button>
         </div>
         <div className="md:flex-row flex-col-reverse flex justify-start gap-14">
-          <div className="image-container 2xl:max-w-[1000px] 3xl:max-w-[1300px] max-w-[750px] max-h-[600px] rounded-xl overflow-hidden">
+          <div className="image-container 2xl:max-w-[1000px] 3xl:max-w-[1300px] max-w-[750px] max-h-[600px] 2xl:max-h-[900px] 3xl:max-h-[1200px] rounded-xl overflow-hidden">
             <img
               src={imageUrl}
               alt="showcase-image"
@@ -80,7 +80,7 @@ const Section3 = React.forwardRef((_, ref) => {
               onMouseLeave={handleMouseLeave}
             />
           </div>
-          <div className="section-3-text flex md:flex-col  flex-wrap flex-row gap-4 mt-3 md:text-2xl 2xl:text-3xl 3xl:text-4xl text-lg">
+          <div className="section-3-text flex md:flex-col  flex-wrap flex-row md:gap-4 2xl:gap-8 3xl:gap-12 mt-3 md:text-2xl 2xl:text-3xl 3xl:text-4xl text-lg">
             <p
               onMouseEnter={handleMouseEnterCursor}
               onMouseLeave={handleMouseLeaveCursor}
