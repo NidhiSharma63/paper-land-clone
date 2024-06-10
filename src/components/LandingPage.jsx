@@ -70,13 +70,13 @@ const LandingPage = React.forwardRef((props, ref) => {
   }, [ref]);
 
   return (
-    <div>
-      <div className="h-screen bg-black flex items-center justify-center">
+    <div className="w-screen ">
+      <div className="h-screen w-screen bg-black flex items-center justify-center">
         <h1
           ref={loadingTextAnimationRef}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="logo first-screen-text md:text-7xl sm:text-4xl text-2xl text-white uppercase font-bold flex gap-2"
+          className="logo first-screen-text 2xl:text-9xl 2xl:border-2 md:text-7xl sm:text-4xl text-2xl text-white uppercase font-bold flex gap-2"
         >
           <span className="block">P</span>
           <span className="block">A</span>

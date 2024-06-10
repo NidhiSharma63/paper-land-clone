@@ -13,6 +13,10 @@ body {
   /* font-family: "Roboto", sans-serif; */
    font-family: "Nunito", sans-serif;
   overflow-x: hidden;
+  /* max-width: 1440px; */
+  margin: auto;
+  border: 2px solid red;
+  background-color: #fccff6;
 }
 
 
@@ -24,6 +28,7 @@ body {
   background-position: center;
   scale:3.5;
   display: none;
+  width: 100%;
   /* background-color: orange;
   scale: 0.5; */
 }

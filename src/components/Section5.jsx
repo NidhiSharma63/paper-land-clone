@@ -59,7 +59,7 @@ const Section5 = React.forwardRef((_, ref) => {
     ref.current?.classList.remove("section-3-cursor-animation");
   }, [ref]);
   return (
-    <div className="section-5 h-auto flex  bg-[#fccff6] text-[#373637] align-middle justify-between md:p-[4rem] pt-[4rem] p-[1rem] pl-[1rem] md:pl-[7rem] flex-col gap-16">
+    <div className="section-5 max-w-[1440px] m-auto h-auto flex  bg-[#fccff6] text-[#373637] align-middle justify-between md:p-[4rem] pt-[4rem] p-[1rem] pl-[1rem] md:pl-[7rem] flex-col gap-16">
       <div className="flex align-middle justify-start gap-12">
         <h3 className="text-2xl font-bold heading">More Products</h3>
         <button

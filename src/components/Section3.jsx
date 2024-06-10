@@ -53,7 +53,7 @@ const Section3 = React.forwardRef((_, ref) => {
   }, [ref]);
 
   return (
-    <div className="section-3 h-auto gap-8 flex  bg-[#fccff6] text-[#373637] align-middle justify-between md:p-[4rem] p-[2rem] pt-[4rem] md:pl-[7rem] pl-[2rem] flex-col ">
+    <div className="section-3 max-w-[1440px] m-auto h-auto gap-8 flex  bg-[#fccff6] text-[#373637] align-middle justify-between md:p-[4rem] p-[2rem] pt-[4rem] md:pl-[7rem] pl-[2rem] flex-col ">
       <div className="flex align-middle justify-start gap-12">
         <h3 className="text-2xl font-bold heading">Product Collections</h3>
         <button
