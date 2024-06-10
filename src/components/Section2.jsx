@@ -22,7 +22,7 @@ const Section2 = () => {
     <div
       data-scroll
       data-scroll-speed="0"
-      className="section-2 max-w-[1920px] m-auto h-screen flex border-2 bg-[#fccff6] text-[#373637] align-middle justify-center md:p-[4rem] p-[2rem] pt-[8rem] md:gap-12 gap-6 flex-col lg:flex-row"
+      className="section-2 max-w-[1920px] m-auto h-screen flex bg-[#fccff6] text-[#373637] align-middle justify-center md:p-[4rem] p-[2rem] pt-[8rem] md:gap-12 gap-6 flex-col lg:flex-row"
     >
       {/* <div className="w-[80%] h-[80%] m-auto border-2 flex gap-24"> */}
       <div className="">

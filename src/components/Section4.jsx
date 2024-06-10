@@ -138,18 +138,18 @@ const Section4 = React.forwardRef((_, ref) => {
   }, [ref]);
 
   return (
-    <div className=" max-w-[1440px] m-auto section-4 h-auto flex  bg-[#fccff6] text-[#373637] align-middle justify-between md:p-[4rem]  md:pl-[4rem] p-[2rem] pl-[2rem] flex-col gap-16">
-      <div className="flex align-middle justify-start gap-12">
-        <h3 className="text-2xl font-bold heading">Bestsellers</h3>
-        <button
-          onMouseEnter={handleMouseEnterCursor}
-          onMouseLeave={handleMouseLeaveCursor}
-          className="border-2 px-4 py-1 rounded text-[11px] font-medium tracking-wide border-[#181816cc]"
-        >
-          VIEW ALL PRODUCTS
-        </button>
-      </div>
+    <div className=" max-w-[1920px] m-auto section-4 h-auto flex  bg-[#fccff6] text-[#373637] align-middle justify-between md:p-[4rem]  md:pl-[4rem] p-[2rem] pl-[2rem] flex-col gap-16">
       <div className="flex flex-col md:gap-36 gap-12 relative">
+        <div className="flex align-middle justify-start gap-12">
+          <h3 className="text-2xl font-bold heading">Bestsellers</h3>
+          <button
+            onMouseEnter={handleMouseEnterCursor}
+            onMouseLeave={handleMouseLeaveCursor}
+            className="border-2 px-4 py-1 rounded text-[11px] font-medium tracking-wide border-[#181816cc]"
+          >
+            VIEW ALL PRODUCTS
+          </button>
+        </div>
         {data.map((item) => {
           return (
             <div
