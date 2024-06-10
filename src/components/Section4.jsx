@@ -139,7 +139,7 @@ const Section4 = React.forwardRef((_, ref) => {
 
   return (
     <div className=" max-w-[1920px] m-auto section-4 h-auto flex  bg-[#fccff6] text-[#373637] align-middle justify-between md:p-[4rem]  md:pl-[4rem] p-[2rem] pl-[2rem] flex-col gap-16">
-      <div className="flex flex-col md:gap-36 gap-12 relative border-2 border-red-500  justify-center flex md:gap-16 gap-1 flex-col ">
+      <div className="flex flex-col md:gap-36 gap-12 relative  justify-center flex md:gap-16 gap-1 flex-col ">
         <div className="flex align-middle justify-start gap-12">
           <h3 className="md:text-2xl text-sm 2xl:text-3xl 3xl:text-4xl font-bold heading">
             Bestsellers
@@ -152,7 +152,7 @@ const Section4 = React.forwardRef((_, ref) => {
             VIEW ALL PRODUCTS
           </button>
         </div>
-        <div className="flex flex-col gap-28 border-2 justify-center">
+        <div className="flex flex-col gap-28  justify-center">
           {data.map((item) => {
             return (
               <div

@@ -54,7 +54,7 @@ const Section3 = React.forwardRef((_, ref) => {
 
   return (
     <div className="section-3 max-w-[1920px] m-auto my-8 h-auto gap-8 flex  bg-[#fccff6] text-[#373637] align-middle justify-between md:p-[4rem] p-[1rem] pt-[4rem] md:pl-[7rem] pl-[1rem] flex-col ">
-      <div className="section3-bottom  border-2 border-red-500  justify-center flex md:gap-16 gap-1 flex-col ">
+      <div className="section3-bottom   justify-center flex md:gap-16 gap-1 flex-col ">
         <div className="flex align-middle justify-start gap-12">
           <h3 className="md:text-2xl text-sm 2xl:text-3xl 3xl:text-4xl font-bold heading">
             Product Collections

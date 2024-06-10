@@ -22,7 +22,7 @@ const Section2 = () => {
     <div
       data-scroll
       data-scroll-speed="0"
-      className="section-2 max-w-[1920px] m-auto h-screen flex bg-[#fccff6] text-[#373637] align-middle justify-center md:p-[4rem] p-[2rem] pt-[8rem] md:gap-12 gap-6 flex-col lg:flex-row"
+      className="section-2 max-w-[1920px] m-auto h-screen flex bg-[#fccff6] text-[#373637] items-center justify-center md:p-[4rem] p-[2rem] pt-[8rem] md:gap-12 gap-6 flex-col lg:flex-row"
     >
       {/* <div className="w-[80%] h-[80%] m-auto border-2 flex gap-24"> */}
       <div className="">
@@ -41,7 +41,7 @@ const Section2 = () => {
           <span className="inline-block">E</span>
         </p>
       </div>
-      <div>
+      <div className="">
         <p className="section-2-text md:text-3xl 2xl:text-4xl  text-xl tracking-[.1rem] 2xl:leading-[5rem] md:leading-[4rem] leading-[2.8rem] italic">
           <span className="inline-block">Paper</span>&nbsp;
           <span className="inline-block">+</span>&nbsp;
