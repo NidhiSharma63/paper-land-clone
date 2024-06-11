@@ -17,8 +17,21 @@ body {
   margin: auto;
   /* border: 2px solid red; */
   background-color: #fccff6;
+  /* position: relative; */
 }
 
+/* change scroll bar color */
+html.has-scroll-smooth {
+  scroll-behavior: smooth;
+}/* For Webkit browsers like Chrome, Safari, and newer versions of Edge */
+::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
+}
+
+/* For Firefox - can't set width to 0, but can use 'none' */
+* {
+    scrollbar-width: none; /* Firefox alternative to hide scrollbar */
+}
 
 /* main page bg image */
 .main-div{

@@ -92,7 +92,7 @@ const LandingPage = React.forwardRef((props, ref) => {
       </div>
       <div className="pinkish-div absolute bottom-0 z-1 bg-[#D6BAD0] w-full" />
       <div className="greenish-div absolute w-0 top-0 right-0 z-2 bg-[#16a991] h-full" />
-      <div className="main-div absolute w-full h-full top-0 right-0 z-3 flex justify-between flex-col">
+      <div className="main-div absolute w-screen h-full top-0 right-0 z-3 flex justify-between flex-col">
         <header className="header flex w-full justify-between align-middle text-white md:p-11 p-4">
           <h1
             onMouseEnter={handleMouseEnter}
