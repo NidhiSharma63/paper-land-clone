@@ -26,7 +26,7 @@ const Section4 = React.forwardRef((_, ref) => {
       duration: 1,
       scrollTrigger: {
         trigger: ".first-section",
-        start: "top 80%",
+        start: "top 50%", // from 80 to 50
         end: "bottom bottom",
         scrub: 8,
       },
