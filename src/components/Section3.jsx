@@ -38,7 +38,7 @@ const Section3 = React.forwardRef((_, ref) => {
     // change image url
     setTimeout(() => {
       setimageUrl(
-        `/assets/${event.target.dataset.category.split(" ")[0]}.webp`
+        `/assets/${event.target.dataset.category?.split(" ")[0]}.webp`
       );
       setRemoveImage(false);
     }, 400);
@@ -80,12 +80,12 @@ const Section3 = React.forwardRef((_, ref) => {
               onMouseLeave={handleMouseLeave}
             />
           </div>
-          <div className="section-3-text flex md:flex-col  flex-wrap gap-4 flex-row md:gap-4 2xl:gap-8 3xl:gap-12 mt-3 md:text-2xl 2xl:text-3xl 3xl:text-4xl text-lg">
+          <div className="section-3-text flex md:flex-col  flex-wrap md:gap-8 gap-8 flex-row 2xl:gap-8 3xl:gap-12 mt-3 md:text-2xl 2xl:text-3xl 3xl:text-4xl text-md">
             <p
               onMouseEnter={handleMouseEnterCursor}
               onMouseLeave={handleMouseLeaveCursor}
-              className={` cursor-pointer hover:translate-x-5 transition ${
-                categorySelected.includes("Art Prints")
+              className={` cursor-pointer hover:translate-x-2 transition ${
+                categorySelected?.includes("Art Prints")
                   ? "active-category"
                   : "text-[#4e4d4e3a]"
               }`}
@@ -94,9 +94,10 @@ const Section3 = React.forwardRef((_, ref) => {
             >
               Art Prints
               <hr
+                data-category="Art Prints"
                 // className="border-[1px] border-[#4e4d4e3a]"
                 className={` border-[1px] ${
-                  categorySelected.includes("Art Prints")
+                  categorySelected?.includes("Art Prints")
                     ? "active-category"
                     : "border-[#4e4d4e3a]"
                 }`}
@@ -107,7 +108,7 @@ const Section3 = React.forwardRef((_, ref) => {
               onMouseEnter={handleMouseEnterCursor}
               onMouseLeave={handleMouseLeaveCursor}
               className={` cursor-pointer hover:translate-x-5 transition ${
-                categorySelected.includes("Cards & Stationery")
+                categorySelected?.includes("Cards & Stationery")
                   ? "active-category"
                   : "text-[#4e4d4e3a]"
               }`}
@@ -116,8 +117,9 @@ const Section3 = React.forwardRef((_, ref) => {
             >
               Cards & Stationery
               <hr
+                data-category="Cards & Stationery"
                 className={` border-[1px] ${
-                  categorySelected.includes("Cards & Stationery")
+                  categorySelected?.includes("Cards & Stationery")
                     ? "active-category"
                     : "border-[#4e4d4e3a]"
                 }`}
@@ -128,7 +130,7 @@ const Section3 = React.forwardRef((_, ref) => {
               onMouseEnter={handleMouseEnterCursor}
               onMouseLeave={handleMouseLeaveCursor}
               className={` cursor-pointer hover:translate-x-5 transition ${
-                categorySelected.includes("Homewares")
+                categorySelected?.includes("Homewares")
                   ? "active-category"
                   : "text-[#4e4d4e3a]"
               }`}
@@ -137,8 +139,9 @@ const Section3 = React.forwardRef((_, ref) => {
             >
               Homewares
               <hr
+                data-category="Homewares"
                 className={`border-[1px] ${
-                  categorySelected.includes("Homewares")
+                  categorySelected?.includes("Homewares")
                     ? "active-category"
                     : "border-[#4e4d4e3a]"
                 }`}
