@@ -68,7 +68,7 @@ const Section3 = React.forwardRef((_, ref) => {
           </button>
         </div>
         <div className="md:flex-row flex-col-reverse flex justify-start gap-14">
-          <div className="image-container 2xl:max-w-[1000px] 3xl:max-w-[1300px] max-w-[750px] max-h-[600px] 2xl:max-h-[900px] 3xl:max-h-[1200px] rounded-xl overflow-hidden">
+          <div className="image-container 2xl:w-[1000px] 3xl:w-[1300px] max-w-[750px] max-h-[600px] 2xl:h-[900px] 3xl:h-[1200px] rounded-xl overflow-hidden">
             <img
               src={imageUrl}
               alt="showcase-image"

@@ -203,7 +203,7 @@ const Section4 = React.forwardRef((_, ref) => {
                     Shop Now
                   </button>
                 </div>
-                <div className="imageContainer md:max-w-[1050px] 2xl:max-w-[1400px] 3xl:max-w-[1700px] max-h-[600px] 2xl:max-h-[900px] 3xl:max-h-[1200px] rounded-xl overflow-hidden ">
+                <div className="imageContainer md:max-w-[1050px] 2xl:max-w-[1400px] 3xl:max-w-[1700px] max-h-[600px] 2xl:max-h-[600px] 3xl:max-h-[800px] rounded-xl overflow-hidden ">
                   <img
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
